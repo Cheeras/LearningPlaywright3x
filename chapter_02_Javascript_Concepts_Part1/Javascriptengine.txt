@@ -1,0 +1,9 @@
+//how java script engine works
+Step 1:
+Parsing of the Javascript
+Java script --> will go for parser
+Step 2:
+Then it is create AST Abstract Syntax Tree
+Step 3:
+Interpreter the code
+if code is simple it will convert to Binary code 
