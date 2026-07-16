@@ -158,6 +158,18 @@ Bytecode → JIT Compiler (TurboFan) → Machine Code
 | `18_Logical_Operator.js` | `&`, `\|`, `&&`, `\|\|` |
 | `19_Confusion_Comparision.js` | Loose vs strict comparison with empty strings |
 | `20_Confusion_Comparision_part2.js` | `null` vs `undefined` comparison confusion |
+| `21_String_Operations.js` | String concatenation and `typeof` with strings |
+| `22_Ternary_Operator.js` | Ternary operator syntax (`condition ? ifTrue : ifFalse`) |
+| `23_IQ1_Ternary.js` | IQ: Ternary for API status code validation |
+| `24_IQ2_Ternary.js` | IQ: Ternary for environment-based URLs |
+| `25_IQ3_Ternary.js` | IQ: Ternary for CI headless/headed browser mode |
+| `26_IQ4_Ternary.js` | IQ: Ternary for SLA breach check with template literals |
+| `27_Nested_Ternary_Op.js` | Nested ternary operator with age-based conditions |
+| `28_IQ_Nested_Ternary.js` | IQ: Nested ternary for HTTP status code categories |
+| `29_IQ_Nested_Ternary2.js` | IQ: Nested ternary for temperature feel classification |
+| `30_Type_Op.js` | `typeof` operator — checking primitive types |
+| `31_BitWise_Operator.js` | Bitwise operators: `&`, `\|`, `^`, `~`, `<<`, `>>` |
+| `32_DataTypes.js` | Data types overview and examples |
 
 ### Comparison Cheat Sheet
 
