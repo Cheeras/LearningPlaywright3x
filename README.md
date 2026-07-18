@@ -170,6 +170,13 @@ Bytecode → JIT Compiler (TurboFan) → Machine Code
 | `30_Type_Op.js` | `typeof` operator — checking primitive types |
 | `31_BitWise_Operator.js` | Bitwise operators: `&`, `\|`, `^`, `~`, `<<`, `>>` |
 | `32_DataTypes.js` | Data types overview and examples |
+| `33_Increment_Decrement.js` | Increment (`++`) operator basics — prefix vs postfix |
+| `34_incre_decre_part2.js` | Increment/decrement operator — deeper examples |
+| `35_Decrement_Op.js` | Decrement (`--`) operator — prefix vs postfix |
+| `36_Null_Coalescing.js` | Nullish coalescing operator (`??`) |
+| `37_Increment_Decrement_Assignmet.js` | Assignment with increment/decrement — combined expressions |
+| `PreincrementOperator.png` | Diagram: pre-increment operator execution flow |
+| `PostincrementOperator.png` | Diagram: post-increment operator execution flow |
 
 ### Comparison Cheat Sheet
 
