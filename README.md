@@ -175,6 +175,7 @@ Bytecode → JIT Compiler (TurboFan) → Machine Code
 | `35_Decrement_Op.js` | Decrement (`--`) operator — prefix vs postfix |
 | `36_Null_Coalescing.js` | Nullish coalescing operator (`??`) |
 | `37_Increment_Decrement_Assignmet.js` | Assignment with increment/decrement — combined expressions |
+| `38_Increment_Decrement_Assginment_part2.js` | Advanced increment/decrement assignments — 12 interview-style challenges (FAANG-level) |
 | `PreincrementOperator.png` | Diagram: pre-increment operator execution flow |
 | `PostincrementOperator.png` | Diagram: post-increment operator execution flow |
 
