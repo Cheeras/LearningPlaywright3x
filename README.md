@@ -14,7 +14,9 @@
 | 4 | [Identifiers](#chapter-4-identifiers) | Identifier rules, comments, naming conventions |
 | 5 | [Literals](#chapter-5-literals) | String, number, boolean, null, undefined, numeric literals |
 | 6 | [Operators](#chapter-6-operators) | Data types, arithmetic, comparison, logical operators |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, source code vs bytecode |
+| 7 | [Statements](#chapter-7-statements) | if/else, nested if, multiple if-else with grade scoring |
+| 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, HackerRank problems |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode |
 
 ---
 
@@ -201,6 +203,63 @@ null >= 0         // false
 
 ---
 
+## Chapter 7: Statement
+
+**Folder:** `chapter_07_Statement/`
+
+| File | Description |
+|------|-------------|
+| `37_statement_if_else.js` | `if/else` basics — age check examples, nested if |
+| `38_Multiple_if_else_Statement.js` | Grade scoring with multiple `if...else if...else` chains (3 versions: basic, simplified, clean) |
+
+### Key Concepts
+
+- **`if/else`** — Conditional branching with boolean expressions
+- **Nested if** — Conditions inside conditions for multi-level logic
+- **Multiple `if...else if...else`** — Chaining multiple conditions with optimized ordering (highest value first)
+- **Refactoring patterns** — Removing redundant range checks for cleaner code and separating logic from display
+
+---
+
+## Chapter 8: Switch Case
+
+**Folder:** `chapter_08_SwitchCaseConcept/`
+
+| File | Description |
+|------|-------------|
+| `39_Switch_case_Statement.js` | Switch statement basics — day-of-week mapping with `break` and `default` |
+| `40_IQ.js` | IQ: Switch fall-through behavior — sprint planning days without break |
+| `41_REAL_API_Testing.js` | Real-world usage: HTTP status code response handling (200, 404) |
+| `42_Switch_Group.js` | Grouping cases — browser engine detection (Chromium, Mozilla, WebKit) |
+| `43_InterviewQuestion2.js` | IQ: Fall-through with fruits — no breaks, observing cascade execution |
+| `44_InterviewQ3.js` | IQ: Switch with `true` — range-based test score grading (95, 85, 70, 50) |
+| `45_InterviewQ4.js` | IQ: `switch` with `0` vs `false` — strict comparison (`===`) behavior |
+| `46_IQ5.js` | IQ: Duplicate case values — what happens with two `case 10` blocks |
+| `46_Switch_Case_Top10Questions.js` | Top 10 switch case interview questions (skeleton) |
+| `47_ifelse_HackerRank.js` | HackerRank: Grade classification with `if...else` (AA → FF) |
+| `48_Switch_Case_hackerRank.js` | HackerRank: Number-to-word converter (1 → ONE, 2 → TWO, ...) |
+
+### Switch Case Behavior
+
+| Feature | Description |
+|---------|-------------|
+| **Strict comparison** | Uses `===` — checks both value and type |
+| **Fall-through** | Without `break`, execution continues to the next case |
+| **Grouping** | Multiple cases can share the same code block |
+| **`default`** | Executes when no case matches (can be placed anywhere) |
+| **Expression** | Can be a number, string, boolean, null, undefined, or even `true` for range matching |
+
+### Switch vs if...else
+
+| Scenario | Recommended |
+|----------|-------------|
+| Single discrete value (day, code, fruit) | `switch` |
+| Range-based checks (scores, ages) | `if...else` |
+| 3+ discrete values | `switch` (cleaner) |
+| Complex conditions (AND/OR) | `if...else` |
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -211,6 +270,9 @@ null >= 0         // false
 | `02_Keywords.md` | Complete reference on JavaScript reserved keywords with comparison table |
 | `03_commands_win.md` | VS Code keyboard shortcuts for Windows |
 | `03_commands_mac.md` | VS Code keyboard shortcuts for macOS |
+| `04_commands_mac.md` | (alias) VS Code keyboard shortcuts for macOS |
+| `05_incrementanddecrement.txt` | Increment (`++`) and decrement (`--`) operator reference — pre/post variants |
+| `06_SwitchCaseStatement.txt` | Switch case statement syntax, step-by-step execution, strict comparison behavior |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 
@@ -235,7 +297,11 @@ Copy this prompt and use it with your AI assistant:
         │
 5. Operators ───────────────► Arithmetic, comparison, logical
         │
-6. Playwright 3x ───────────► (Coming next!)
+6. Statements ──────────────► if/else, nested if, grading
+        │
+7. Switch Case ─────────────► Switch, fall-through, grouping, HackerRank
+        │
+8. Playwright 3x ───────────► (Coming next!)
 ```
 
 ---

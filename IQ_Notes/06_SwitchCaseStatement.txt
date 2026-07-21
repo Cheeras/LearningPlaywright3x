@@ -1,0 +1,31 @@
+//Switch Case Statement
+/**
+The switch statement in JavaScript is used when you need to compare one
+expression against multiple possible values.
+It often makes code cleaner and easier to read than a long chain of if...else if...else.
+*/
+
+//Syntax
+
+switch(expression){
+    case value1:
+    //code to execute
+    break;
+    case value2:
+    //code to execute
+    break:
+    case value3:
+    //code to execute
+    break;
+    default:
+    //code if no case matches
+
+}
+
+How switch works (Step by Step)
+JavaScript evaluates the expression.
+It compares the result with each case using strict equality (===).
+When it finds the first matching case:
+Executes that case.
+Stops if it encounters break.
+If no case matches, default executes.
