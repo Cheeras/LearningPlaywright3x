@@ -15,7 +15,8 @@
 | 5 | [Literals](#chapter-5-literals) | String, number, boolean, null, undefined, numeric literals |
 | 6 | [Operators](#chapter-6-operators) | Data types, arithmetic, comparison, logical operators |
 | 7 | [Statements](#chapter-7-statements) | if/else, nested if, multiple if-else with grade scoring |
-| 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, HackerRank problems |
+| 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, interview questions |
+| 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode |
 
 ---
@@ -236,8 +237,6 @@ null >= 0         // false
 | `45_InterviewQ4.js` | IQ: `switch` with `0` vs `false` — strict comparison (`===`) behavior |
 | `46_IQ5.js` | IQ: Duplicate case values — what happens with two `case 10` blocks |
 | `46_Switch_Case_Top10Questions.js` | Top 10 switch case interview questions (skeleton) |
-| `47_ifelse_HackerRank.js` | HackerRank: Grade classification with `if...else` (AA → FF) |
-| `48_Switch_Case_hackerRank.js` | HackerRank: Number-to-word converter (1 → ONE, 2 → TWO, ...) |
 
 ### Switch Case Behavior
 
@@ -257,6 +256,36 @@ null >= 0         // false
 | Range-based checks (scores, ages) | `if...else` |
 | 3+ discrete values | `switch` (cleaner) |
 | Complex conditions (AND/OR) | `if...else` |
+
+---
+
+## Chapter 9: HackerRank Challenge
+
+**Folder:** `chapter_09_HackerRankChallenge/`
+
+| File | Description |
+|------|-------------|
+| `47_ifelse_HackerRank.js` | HackerRank grade classification — `if...else` chain mapping marks to grades (AA → FF) |
+| `48_Switch_Case_hackerRank.js` | HackerRank number-to-word converter — `switch` mapping digits 1-9 to English words |
+| `49_ifelse_HackerRankScreenshot.png` | Screenshot: HackerRank `if...else` problem statement and expected output |
+| `50_SwitchCase_HackerRankScreenshot.png` | Screenshot: HackerRank `switch` problem statement and expected output |
+
+### HackerRank Challenges
+
+| Challenge | Concept | Input | Output |
+|-----------|---------|-------|--------|
+| Grade Classification | `if...else if...else` | Marks (numeric) | AA / AB / BB / BC / CC / CD / DD / FF |
+| Number to Word | `switch` statement | Number (1-9) | ONE / TWO / ... / NINE / PLEASE TRY AGAIN |
+
+Both challenges use standard input (`stdin`) via `fs.readFileSync(0)` — the HackerRank edge I/O pattern for Node.js.
+
+```bash
+# Run grade classification
+echo 85 | node chapter_09_HackerRankChallenge/47_ifelse_HackerRank.js
+
+# Run number-to-word converter
+echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
+```
 
 ---
 
@@ -299,9 +328,11 @@ Copy this prompt and use it with your AI assistant:
         │
 6. Statements ──────────────► if/else, nested if, grading
         │
-7. Switch Case ─────────────► Switch, fall-through, grouping, HackerRank
+7. Switch Case ─────────────► Switch, fall-through, grouping, IQs
         │
-8. Playwright 3x ───────────► (Coming next!)
+8. HackerRank Challenge ────► if-else & switch coding challenges
+        │
+9. Playwright 3x ───────────► (Coming next!)
 ```
 
 ---
