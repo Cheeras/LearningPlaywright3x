@@ -236,7 +236,9 @@ null >= 0         // false
 | `44_InterviewQ3.js` | IQ: Switch with `true` — range-based test score grading (95, 85, 70, 50) |
 | `45_InterviewQ4.js` | IQ: `switch` with `0` vs `false` — strict comparison (`===`) behavior |
 | `46_IQ5.js` | IQ: Duplicate case values — what happens with two `case 10` blocks |
-| `46_Switch_Case_Top10Questions.js` | Top 10 switch case interview questions (skeleton) |
+| `46_Switch_Case_Top10Questions.js` | Top 10 switch case interview questions — full reference with Number, String, Boolean, null, undefined, and Object expression types |
+| `JavaScript_Switch_Case_Master_Guide_by_ChatGPT.pdf` | Comprehensive PDF guide: switch case syntax, rules, interview questions, best practices |
+| `JavaScript_Switch_Case_Reference_Guide_With_Examples.pdf` | PDF reference: switch case with real-world examples and edge cases |
 
 ### Switch Case Behavior
 
@@ -246,7 +248,18 @@ null >= 0         // false
 | **Fall-through** | Without `break`, execution continues to the next case |
 | **Grouping** | Multiple cases can share the same code block |
 | **`default`** | Executes when no case matches (can be placed anywhere) |
-| **Expression** | Can be a number, string, boolean, null, undefined, or even `true` for range matching |
+| **Expression types** | Number, String, Boolean, null, undefined, Object reference — case type must match expression type |
+
+### Expression Type Coverage
+
+| Expression Type | Example | Case Type Must Be |
+|----------------|---------|-------------------|
+| **Number** | `switch(day)` with `case 1:` | Number |
+| **String** | `switch(browserName)` with `case "Chrome":` | String |
+| **Boolean** | `switch(isLoggedIn)` with `case true:` | Boolean |
+| **null** | `switch(value)` with `case null:` | null |
+| **undefined** | `switch(value)` with `case undefined:` | undefined |
+| **Object** | `switch(person)` with `case person:` | Same object reference |
 
 ### Switch vs if...else
 

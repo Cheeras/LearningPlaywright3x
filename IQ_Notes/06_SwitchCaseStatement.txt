@@ -29,3 +29,5 @@ When it finds the first matching case:
 Executes that case.
 Stops if it encounters break.
 If no case matches, default executes.
+
+//Important Points to Remember for switch case
