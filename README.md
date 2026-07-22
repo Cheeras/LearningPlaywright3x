@@ -150,7 +150,7 @@ Bytecode → JIT Compiler (TurboFan) → Machine Code
 
 ## Chapter 6: Operators
 
-**Folder:** `chapter_06_Operator/`
+**Folder:** `chapter_06_Operators/`
 
 | File | Description |
 |------|-------------|
@@ -212,6 +212,9 @@ null >= 0         // false
 |------|-------------|
 | `37_statement_if_else.js` | `if/else` basics — age check examples, nested if |
 | `38_Multiple_if_else_Statement.js` | Grade scoring with multiple `if...else if...else` chains (3 versions: basic, simplified, clean) |
+| `39_if_else_statementassignment_Level1.js` | **Level 1 — Basic:** Positive/negative/zero check, even/odd, voting eligibility |
+| `40_if_else_statementassignment_Level2.js` | **Level 2 — Intermediate:** Largest of 3 numbers, grade calculator, leap year |
+| `41_if_else_statementassignment_Level3.js` | **Level 3 — Advanced:** Electricity bill calculation — flat rate vs real-world tiered billing |
 
 ### Key Concepts
 
@@ -219,6 +222,7 @@ null >= 0         // false
 - **Nested if** — Conditions inside conditions for multi-level logic
 - **Multiple `if...else if...else`** — Chaining multiple conditions with optimized ordering (highest value first)
 - **Refactoring patterns** — Removing redundant range checks for cleaner code and separating logic from display
+- **Practice assignments** — 3 levels of practice: basic (positive/negative, even/odd, voting), intermediate (largest of 3, grade calc, leap year), and advanced (electricity bill with tiered slab rates)
 
 ---
 
