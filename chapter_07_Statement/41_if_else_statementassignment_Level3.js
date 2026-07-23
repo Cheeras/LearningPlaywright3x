@@ -40,3 +40,9 @@ if(numberUnits <0 ){
                 (numberUnits-300)*7;
 }
 console.log(`Total current Bill for the billing unit of ${numberUnits} is ${totalBill}`);
+
+//Question 12 - BMI Calculator
+let BMI = 22;
+if( BMI <= 18.5){
+
+}
