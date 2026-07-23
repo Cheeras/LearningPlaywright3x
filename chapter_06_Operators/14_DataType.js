@@ -6,3 +6,12 @@
 //==================================
 //Arrays, functions and Objects
 
+let firstInteger = 4;
+let secondInteger = 5;
+console.log(firstInteger+secondInteger);
+
+let firstDecimal = 4.6;
+let secondDecimal = 5.3;
+console.log(firstDecimal+secondDecimal);
+
+let firstString = "HackerRank"
