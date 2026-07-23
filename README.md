@@ -326,6 +326,8 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 | `61_While_vs_for.js` | While with `break` — conditional loop exit |
 | `62_DoWhile_vs_while.js` | **Do-while vs while** — comparison: while skips if false, do-while runs once |
 | `63_NestedFor_Loop.js` | **Nested for loop** — 3×3 grid iteration with `index,j` pairs |
+| `mergehungingithub.png` | Screenshot: Merge hung on GitHub issue |
+| `Headbranchisout of date.png` | Screenshot: Head branch is out of date issue |
 
 ### Loop Comparison
 
