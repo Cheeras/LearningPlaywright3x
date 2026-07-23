@@ -17,6 +17,7 @@
 | 7 | [Statements](#chapter-7-statements) | if/else, nested if, multiple if-else with grade scoring |
 | 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, interview questions |
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
+| 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode |
 
 ---
@@ -306,6 +307,43 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 
 ---
 
+## Chapter 10: Loops Concepts
+
+**Folder:** `chapter_10_loopsconcepts/`
+
+| File | Description |
+|------|-------------|
+| `00_noteforloops.txt` | Overview note — for loop in JavaScript |
+| `51_Loop.js` | **For loop basics** — print 1 to 10, ICU syntax (Init, Condition, Update), pre/post increment behavior |
+| `51_For_loop.js` | **Advanced for loop patterns** — initialization outside, omitted condition (infinite loop), missing updation |
+| `52_Increment.js` | Pre-increment (`++a`) operator example |
+| `53_IQ_forloop.js` | IQ: For loop with variable naming — using any valid identifier |
+| `54_IQ_forloop2.js` | **Infosys & Tekion IQs:** Loop with identifiers, conditional gift logic inside loop |
+| `55_whileloop.js` | **While loop basics** — for vs while comparison, manual increment |
+| `56_whileloop2.js` | While loop with attempt counter (retry pattern) |
+| `57_Modei.js` | While loop — printing "Modi will do 15+ years" |
+| `60_Do_While.js` | **Do-while loop** — retry pattern, executes body at least once |
+| `61_While_vs_for.js` | While with `break` — conditional loop exit |
+| `62_DoWhile_vs_while.js` | **Do-while vs while** — comparison: while skips if false, do-while runs once |
+| `63_NestedFor_Loop.js` | **Nested for loop** — 3×3 grid iteration with `index,j` pairs |
+
+### Loop Comparison
+
+| Loop Type | Syntax | Executes At Least Once? | Use Case |
+|-----------|--------|------------------------|----------|
+| **`for`** | `for(init; cond; update)` | No | Known number of iterations |
+| **`while`** | `while(cond) { }` | No | Condition-based, unknown iterations |
+| **`do-while`** | `do { } while(cond);` | **Yes** | Must run body at least once |
+| **Nested `for`** | `for` inside `for` | No | Multi-dimensional iteration (grids, matrices) |
+
+### Key Concepts
+- **ICU Syntax** — `I`nitialization, `C`ondition, `U`pdate
+- All three parts of `for` are optional — omitting condition defaults to `true` (infinite loop)
+- Pre/post increment doesn't matter in the update part of `for` — value used on next line
+- `do-while` guarantees at least one execution regardless of condition
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -349,7 +387,9 @@ Copy this prompt and use it with your AI assistant:
         │
 8. HackerRank Challenge ────► if-else & switch coding challenges
         │
-9. Playwright 3x ───────────► (Coming next!)
+9. Loops Concepts ──────────► for, while, do-while, nested loops
+        │
+10. Playwright 3x ──────────► (Coming next!)
 ```
 
 ---
