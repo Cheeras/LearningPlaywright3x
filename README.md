@@ -326,6 +326,13 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 | `61_While_vs_for.js` | While with `break` — conditional loop exit |
 | `62_DoWhile_vs_while.js` | **Do-while vs while** — comparison: while skips if false, do-while runs once |
 | `63_NestedFor_Loop.js` | **Nested for loop** — 3×3 grid iteration with `index,j` pairs |
+| `64_For_Loop_Assignment_Level1.js` | **Level 1 — Beginner:** Print 1–10, 10–1, even/odd 1–50, multiplication table of 7 |
+| `65_For_Loop_Assignment_Level2.js` | **Level 2 — Beginner Plus:** Sum 1–100, sum even/odd, squares & cubes 1–10 |
+| `66_For_Loop_Assignment_Level3.js` | **Level 3 — Intermediate:** Factorial, reverse counting by 5s, divisible by 3 & 5, count even/odd 1–1000 |
+| `67_For_Loop_Assignment_Level6.js` | **Level 6 — Logic Building:** Multiples of 7, divisible by 3 not 5, first 20 multiples of 9, sum of squares/cubes |
+| `68_For_Loop_Assignment_Level4_PatternBuilding.js` | **Level 4 — Pattern Building:** (placeholder) |
+| `69_For_Loop_Assignment_Level7_interviewLevel.js` | **Level 7 — Interview Level:** Reverse a given number using `while` loop |
+| `70_For_Loop_CountDigitOfnumber.js` | **Level 7 — Interview Level:** Count digits of a number using `Math.trunc()` |
 | `mergehungingithub.png` | Screenshot: Merge hung on GitHub issue |
 | `Headbranchisout of date.png` | Screenshot: Head branch is out of date issue |
 
@@ -344,6 +351,18 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 - Pre/post increment doesn't matter in the update part of `for` — value used on next line
 - `do-while` guarantees at least one execution regardless of condition
 
+### For Loop Assignment Levels
+
+| Level | File | Focus | Questions |
+|-------|------|-------|-----------|
+| **Level 1 — Beginner** | `64_For_Loop_Assignment_Level1.js` | Warm-up: print sequences, even/odd, multiplication table | 5 |
+| **Level 2 — Beginner Plus** | `65_For_Loop_Assignment_Level2.js` | Summation, squares, cubes | 5 |
+| **Level 3 — Intermediate** | `66_For_Loop_Assignment_Level3.js` | Factorial, reverse counting, divisibility, counting | 5 |
+| **Level 4 — Pattern Building** | `68_For_Loop_Assignment_Level4_PatternBuilding.js` | (placeholder) | — |
+| **Level 6 — Logic Building** | `67_For_Loop_Assignment_Level6.js` | Multiples, conditional divisibility, sum of squares/cubes | 5 |
+| **Level 7 — Interview Level** | `69_For_Loop_Assignment_Level7_interviewLevel.js` | Reverse a number | 1 |
+| **Level 7 — Interview Level** | `70_For_Loop_CountDigitOfnumber.js` | Count digits of a number | 1 |
+
 ---
 
 ## IQ Notes 🧠
@@ -352,11 +371,11 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 
 | File | Description |
 |------|-------------|
+| `00_Notes_link.txt` | Links to useful reference notes |
 | `01_Identifier_Rules.md` | Complete reference on identifier rules with tables, code walkthrough, and pipeline diagram |
 | `02_Keywords.md` | Complete reference on JavaScript reserved keywords with comparison table |
-| `03_commands_win.md` | VS Code keyboard shortcuts for Windows |
 | `03_commands_mac.md` | VS Code keyboard shortcuts for macOS |
-| `04_commands_mac.md` | (alias) VS Code keyboard shortcuts for macOS |
+| `04_commands_win.md` | VS Code keyboard shortcuts for Windows |
 | `05_incrementanddecrement.txt` | Increment (`++`) and decrement (`--`) operator reference — pre/post variants |
 | `06_SwitchCaseStatement.txt` | Switch case statement syntax, step-by-step execution, strict comparison behavior |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
