@@ -333,8 +333,7 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 | `68_For_Loop_Assignment_Level4_PatternBuilding.js` | **Level 4 — Pattern Building:** (placeholder) |
 | `69_For_Loop_Assignment_Level7_interviewLevel.js` | **Level 7 — Interview Level:** Reverse a given number using `while` loop |
 | `70_For_Loop_CountDigitOfnumber.js` | **Level 7 — Interview Level:** Count digits of a number using `Math.trunc()` |
-| `mergehungingithub.png` | Screenshot: Merge hung on GitHub issue |
-| `Headbranchisout of date.png` | Screenshot: Head branch is out of date issue |
+
 
 ### Loop Comparison
 
