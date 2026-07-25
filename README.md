@@ -18,6 +18,7 @@
 | 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, interview questions |
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
+| 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, real-time examples, interview questions |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode |
 
 ---
@@ -364,6 +365,62 @@ echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
 
 ---
 
+## Chapter 11: Arrays Concepts
+
+**Folder:** `chapter_11_ArraysConcept/`
+
+| File | Description |
+|------|-------------|
+| `71_Arrays.js` | Array basics — creating arrays with literal syntax, `typeof` behavior |
+| `72_Arrays.js` | In-depth array overview — mutability, reference type, index-based access |
+| `73_Arrays_Creation.js` | Two ways to create arrays: literal `[]` syntax vs `Array()` constructor |
+| `74_Arrays_CreationWithConstructor.js` | `Array()` constructor nuances — single number arg creates empty slots |
+| `75_Arrays_AccessingAndModify.js` | Accessing elements by index and modifying values in-place |
+| `76_Arrays_Add_Remove.js` | Adding/removing elements — `push()`, `pop()`, `shift()`, `unshift()` |
+| `77_Arrays_REALTIME.js` | Real-world example: browser management with array operations |
+| `78_Array_Searching.js` | Searching arrays — `includes()`, `indexOf()`, `lastIndexOf()`, `find()`, `findIndex()` |
+| `79_IQ.js` | Interview questions: `find()`, `filter()`, edge cases with array methods |
+| `80_Array_Iterate.js` | Iterating arrays — `for` loop, `for...of`, `forEach()`, `map()` |
+| `Memory_Diagram_Of_Array_Forward_backword_indexing_Explanation.png` | Visual diagram: forward and backward indexing in arrays |
+
+### Array Methods Cheat Sheet
+
+| Method | Description | Returns | Mutates Original? |
+|--------|-------------|---------|-------------------|
+| `push()` | Add element to end | New length | ✅ Yes |
+| `pop()` | Remove element from end | Removed element | ✅ Yes |
+| `shift()` | Remove element from start | Removed element | ✅ Yes |
+| `unshift()` | Add element to start | New length | ✅ Yes |
+| `includes()` | Check if element exists | `boolean` | ❌ No |
+| `indexOf()` | First index of element | `number` (-1 if not found) | ❌ No |
+| `lastIndexOf()` | Last index of element | `number` | ❌ No |
+| `find()` | First element satisfying condition | Element or `undefined` | ❌ No |
+| `findIndex()` | Index of first element satisfying condition | `number` | ❌ No |
+| `filter()` | All elements satisfying condition | New array | ❌ No |
+| `forEach()` | Execute function for each element | `undefined` | ❌ No |
+| `map()` | Transform each element | New array | ❌ No |
+
+### Array Indexing
+
+```
+Forward Indexing:   0    1    2    3    4
+                  ┌────┬────┬────┬────┬────┐
+                  │ 10 │ 20 │ 30 │ 40 │ 50 │
+                  └────┴────┴────┴────┴────┘
+Backward Indexing:  -5   -4   -3   -2   -1
+```
+
+### Key Concepts
+
+- Arrays are **reference types** — stored in heap, variable holds reference
+- **Zero-indexed** — first element is at index `0`
+- **Negative indexing** not supported natively (use `arr[arr.length - 1]` for last element)
+- `typeof arr` returns `"object"` — use `Array.isArray()` to check
+- `Array()` constructor with single numeric argument creates array with **empty slots**, not filled with `undefined`
+- **Shallow copy** — methods like `filter()` and `map()` return new arrays but don't deep-clone
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -409,7 +466,9 @@ Copy this prompt and use it with your AI assistant:
         │
 9. Loops Concepts ──────────► for, while, do-while, nested loops
         │
-10. Playwright 3x ──────────► (Coming next!)
+10. Arrays Concepts ────────► Creation, methods, iteration, searching
+        │
+11. Playwright 3x ──────────► (Coming next!)
 ```
 
 ---
