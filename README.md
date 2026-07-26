@@ -19,7 +19,7 @@
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, real-time examples, interview questions |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide** |
 
 ---
 
@@ -436,6 +436,7 @@ Backward Indexing:  -5   -4   -3   -2   -1
 | `06_SwitchCaseStatement.txt` | Switch case statement syntax, step-by-step execution, strict comparison behavior |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
+| `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
 
 ### How to Add New IQ Notes
 
