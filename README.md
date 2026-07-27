@@ -288,6 +288,10 @@ null >= 0         // false
 | `48_Switch_Case_hackerRank.js` | HackerRank number-to-word converter — `switch` mapping digits 1-9 to English words |
 | `49_ifelse_HackerRankScreenshot.png` | Screenshot: HackerRank `if...else` problem statement and expected output |
 | `50_SwitchCase_HackerRankScreenshot.png` | Screenshot: HackerRank `switch` problem statement and expected output |
+| `5_FactorialofgivenNumber.js` | Factorial of a given number using `while` loop |
+| `6_area_perimeter_circle.js` | Area and perimeter of a circle using `Math.PI` |
+| `6_Area_Perimeter_Ractangle.js` | Area and perimeter of a rectangle using `length × width` |
+| `8_GradeCalculatr.js` | Grade calculator — `if...else` chain mapping scores 0–30 to grades A–F |
 
 ### HackerRank Challenges
 
@@ -295,6 +299,10 @@ null >= 0         // false
 |-----------|---------|-------|--------|
 | Grade Classification | `if...else if...else` | Marks (numeric) | AA / AB / BB / BC / CC / CD / DD / FF |
 | Number to Word | `switch` statement | Number (1-9) | ONE / TWO / ... / NINE / PLEASE TRY AGAIN |
+| Factorial of a Number | `while` loop | Number (n) | Factorial value |
+| Circle Area & Perimeter | `Math.PI` formula | Radius (r) | Area & Perimeter |
+| Rectangle Area & Perimeter | Arithmetic formulas | Length, Width | Area & Perimeter |
+| Grade Calculator | `if...else if...else` | Score (0–30) | A / B / C / D / E / F |
 
 Both challenges use standard input (`stdin`) via `fs.readFileSync(0)` — the HackerRank edge I/O pattern for Node.js.
 
@@ -304,6 +312,18 @@ echo 85 | node chapter_09_HackerRankChallenge/47_ifelse_HackerRank.js
 
 # Run number-to-word converter
 echo 4 | node chapter_09_HackerRankChallenge/48_Switch_Case_hackerRank.js
+
+# Run factorial calculator
+node chapter_09_HackerRankChallenge/5_FactorialofgivenNumber.js
+
+# Run circle area & perimeter
+node chapter_09_HackerRankChallenge/6_area_perimeter_circle.js
+
+# Run rectangle area & perimeter
+node chapter_09_HackerRankChallenge/6_Area_Perimeter_Ractangle.js
+
+# Run grade calculator
+node chapter_09_HackerRankChallenge/8_GradeCalculatr.js
 ```
 
 ---
