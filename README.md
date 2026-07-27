@@ -19,6 +19,7 @@
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, real-time examples, interview questions |
+| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide** |
 
 ---
@@ -441,6 +442,48 @@ Backward Indexing:  -5   -4   -3   -2   -1
 
 ---
 
+## Chapter 12: JavaScript Coding Assignments
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/fundametals/`
+
+| File | Description |
+|------|-------------|
+| `Q1_print1to10numbers.js` | Print numbers 1 to 50 using `for` loop |
+| `Q2_printevennumber.js` | Print even numbers from 1 to 100 |
+| `Q3_printoddnumbers.js` | Print odd numbers from 1 to 100 |
+| `Q4_sumofnumbers.js` | Sum of numbers from 1 to 100 |
+| `Q5_printmultable17.js` | Multiplication table of 17 |
+| `Q6_factorialof8.js` | Factorial of 8 using `while` loop |
+| `Q7_reversofnumber.js` | Reverse a given number (987654) |
+| `Q8_CountDigits.js` | Count digits of a number (987654321) |
+| `Q9_armstongnumber.js` | Check if a number is Armstrong |
+| `Q10_palindromnumber.js` | Check if a number is Palindrome |
+
+### Fundamentals — Level 1
+
+| Question | Concept | Description |
+|----------|---------|-------------|
+| Q1 | `for` loop | Print 1 to 50 |
+| Q2 | `for` loop + `%` | Print even numbers 1–100 |
+| Q3 | `for` loop + `%` | Print odd numbers 1–100 |
+| Q4 | `for` loop + accumulation | Sum 1 to 100 |
+| Q5 | `for` loop + template literals | Multiplication table of 17 |
+| Q6 | `while` loop | Factorial of 8 |
+| Q7 | `while` loop + reverse logic | Reverse a number |
+| Q8 | `while` loop | Count digits of a number |
+| Q9 | `while` loop + `**` | Armstrong number check |
+| Q10 | `while` loop + reverse + compare | Palindrome number check |
+
+### Run Commands
+
+```bash
+# Fundamentals
+node chapter_12_JavascriptCodingAssignments/fundametals/Q1_print1to10numbers.js
+node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -489,7 +532,9 @@ Copy this prompt and use it with your AI assistant:
         │
 10. Arrays Concepts ────────► Creation, methods, iteration, searching
         │
-11. Playwright 3x ──────────► (Coming next!)
+11. JS Coding Assignments ──► Fundamentals: print, sum, factorial, reverse, Armstrong, palindrome
+        │
+12. Playwright 3x ──────────► (Coming next!)
 ```
 
 ---
