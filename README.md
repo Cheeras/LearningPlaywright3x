@@ -402,6 +402,12 @@ node chapter_09_HackerRankChallenge/8_GradeCalculatr.js
 | `78_Array_Searching.js` | Searching arrays — `includes()`, `indexOf()`, `lastIndexOf()`, `find()`, `findIndex()` |
 | `79_IQ.js` | Interview questions: `find()`, `filter()`, edge cases with array methods |
 | `80_Array_Iterate.js` | Iterating arrays — `for` loop, `for...of`, `forEach()`, `map()` |
+| `81_Arrayfunctions_phase1.js` | Array transformation methods — `push()`, `pop()`, `shift()`, `unshift()`, `splice()`, `slice()` |
+| `81_Arrayfunctions_phase2.js` | Array iteration methods — `forEach()`, `map()`, `filter()`, `reduce()` |
+| `82_Arrayfunctions_phase2_part2.js` | Advanced array methods — `every()`, `some()`, `flat()`, `flatMap()` |
+| `83_ArrayTransform.js` | Array transformation — `map()`, `filter()`, `reduce()` with real-world examples |
+| `84_ArraysSorting.js` | Array sorting — natural sort (lexicographic) vs proper sort with compare function `(a,b) => a-b` |
+| `85_Arrays_Slicing.js` | Array slicing — `slice()` vs `splice()` with start/end index behavior |
 | `Memory_Diagram_Of_Array_Forward_backword_indexing_Explanation.png` | Visual diagram: forward and backward indexing in arrays |
 
 ### Array Methods Cheat Sheet
@@ -500,6 +506,7 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
+| `Arrays_Natural_vs_Proper_Sorting.md` | **NEW!** Natural sorting (default) vs proper sorting with `a-b` / `b-a` — comparison table, step-by-step walkthrough, pipeline diagram |
 
 ### How to Add New IQ Notes
 
