@@ -408,6 +408,10 @@ node chapter_09_HackerRankChallenge/8_GradeCalculatr.js
 | `83_ArrayTransform.js` | Array transformation — `map()`, `filter()`, `reduce()` with real-world examples |
 | `84_ArraysSorting.js` | Array sorting — natural sort (lexicographic) vs proper sort with compare function `(a,b) => a-b` |
 | `85_Arrays_Slicing.js` | Array slicing — `slice()` vs `splice()` with start/end index behavior |
+| `86_Arrayconcat.js` | Array concatenation — `concat()`, spread operator `[...a,...b]`, and `join()` with custom separator |
+| `87_ArrayChecking.js` | Array checking — `Array.isArray()`, `every()` (all must pass), `some()` (at least one passes) |
+| `88_ArrayCopy.js` | Array copying — spread `[...arr]`, `slice()`, `Array.from()`, `concat()` — shallow copy techniques |
+| `89_ArrayDestruction.js` | Array destructuring — basic unpacking, rest pattern `...rest`, default values, skipping elements (hole), swapping without temp variable |
 | `Memory_Diagram_Of_Array_Forward_backword_indexing_Explanation.png` | Visual diagram: forward and backward indexing in arrays |
 
 ### Array Methods Cheat Sheet
