@@ -16,10 +16,10 @@
 | 6 | [Operators](#chapter-6-operators) | Data types, arithmetic, comparison, logical operators |
 | 7 | [Statements](#chapter-7-statements) | if/else, nested if, multiple if-else with grade scoring |
 | 8 | [Switch Case](#chapter-8-switch-case) | Switch statement, fall-through, grouping, real-world API testing, interview questions |
-| 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch) |
+| 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch), factorial, circle/rectangle area & perimeter, grade calculator, array problems (max, min, frequency, duplicates, reverse) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
-| 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, real-time examples, interview questions |
-| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome |
+| 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
+| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide** |
 
 ---
@@ -293,6 +293,15 @@ null >= 0         // false
 | `6_area_perimeter_circle.js` | Area and perimeter of a circle using `Math.PI` |
 | `6_Area_Perimeter_Ractangle.js` | Area and perimeter of a rectangle using `length × width` |
 | `8_GradeCalculatr.js` | Grade calculator — `if...else` chain mapping scores 0–30 to grades A–F |
+| `1_FactorialofgivenNumber.js` | Factorial using `while` loop (function-based) |
+| `2_area_perimeter_circle.js` | Area & perimeter of a circle using `Math.PI` (function-based) |
+| `3_Area_Perimeter_Ractangle.js` | Area & perimeter of a rectangle (function-based) |
+| `4_GradeCalculatr.js` | Grade calculator — `if...else` chain mapping scores 0–30 to grades A–F (function-based) |
+| `5_findMaxelementarray.js` | Find maximum element from an array using `for...of` |
+| `6_frequencyOfArrayElements.js` | Frequency of each element in an array using `Map` |
+| `7_findduplicateelements.js` | Find duplicate elements in an array (3 approaches: nested for, for-in, for-of) |
+| `8_reverseOfArray.js` | Reverse an array — using `reverse()`, separate array, and two-pointer in-place swap |
+| `9_findsmallestinArray.js` | Find smallest element in an array — using `for` loop and `Math.min(...arr)` |
 
 ### HackerRank Challenges
 
@@ -304,6 +313,11 @@ null >= 0         // false
 | Circle Area & Perimeter | `Math.PI` formula | Radius (r) | Area & Perimeter |
 | Rectangle Area & Perimeter | Arithmetic formulas | Length, Width | Area & Perimeter |
 | Grade Calculator | `if...else if...else` | Score (0–30) | A / B / C / D / E / F |
+| Find Max Element | `for...of` loop | Array of numbers | Maximum value |
+| Frequency of Elements | `Map` object | Array of numbers | Element → Count pairs |
+| Find Duplicates | Nested loops / `for...in` / `for...of` | Array of numbers | Duplicate elements |
+| Reverse an Array | Two-pointer in-place swap | Array of numbers | Reversed array |
+| Find Smallest Element | `for` loop / `Math.min(...arr)` | Array of numbers | Minimum value |
 
 Both challenges use standard input (`stdin`) via `fs.readFileSync(0)` — the HackerRank edge I/O pattern for Node.js.
 
@@ -325,6 +339,13 @@ node chapter_09_HackerRankChallenge/6_Area_Perimeter_Ractangle.js
 
 # Run grade calculator
 node chapter_09_HackerRankChallenge/8_GradeCalculatr.js
+
+# Run array problems
+node chapter_09_HackerRankChallenge/5_findMaxelementarray.js
+node chapter_09_HackerRankChallenge/6_frequencyOfArrayElements.js
+node chapter_09_HackerRankChallenge/7_findduplicateelements.js
+node chapter_09_HackerRankChallenge/8_reverseOfArray.js
+node chapter_09_HackerRankChallenge/9_findsmallestinArray.js
 ```
 
 ---
@@ -492,6 +513,18 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q1_print1to10numbers.js
 node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 ```
 
+### if-else — Level 2
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/if-else/`
+
+| File | Description |
+|------|-------------|
+| `largestof3numbers.js` | Find the largest of 3 numbers with equal-value edge cases |
+| `smallestof3numbers.js` | Find the smallest of 3 numbers with equal-value edge cases |
+| `checkleapyear.js` | Leap year check — divisible by 400 or (by 4 and not by 100) |
+| `voteeligibility.js` | Vote eligibility check based on age (with invalid age guard) |
+| `electricitybillgenerate.js` | Electricity bill calculator — tiered slab rates (100/200/300+ units) |
+
 ---
 
 ## IQ Notes 🧠
@@ -543,7 +576,7 @@ Copy this prompt and use it with your AI assistant:
         │
 10. Arrays Concepts ────────► Creation, methods, iteration, searching
         │
-11. JS Coding Assignments ──► Fundamentals: print, sum, factorial, reverse, Armstrong, palindrome
+11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome) & if-else (largest/smallest, leap year, vote, electricity bill)
         │
 12. Playwright 3x ──────────► (Coming next!)
 ```
