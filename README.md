@@ -19,7 +19,7 @@
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch), factorial, circle/rectangle area & perimeter, grade calculator, array problems (max, min, frequency, duplicates, reverse) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
-| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill |
+| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays: sum, average, count, positive/negative, index finding** |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide** |
 
 ---
@@ -513,6 +513,48 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q1_print1to10numbers.js
 node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 ```
 
+### Arrays — Level 3
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/`
+
+| File | Description |
+|------|-------------|
+| `1_findSumofAllElementsArray.js` | Find sum of all elements in an array |
+| `2_findAvgofAllElementsArray.js` | Find average of all elements in an array |
+| `3_countarrayelementwithoutlength.js` | Count array elements without using `.length` property |
+| `4_countevennumberinArray.js` | Count even numbers in an array |
+| `5_PrintOnlyPositivenumbers.js` | Print only positive numbers from an array |
+| `6_PrintOnlyNegativenumbers.js` | Print only negative numbers from an array |
+| `7_findsecondAndSecondLast.js` | Find second and second-last element from an array |
+| `8_checknumberingivenArray.js` | Check if a number exists in a given array |
+| `9_checknumberingivenArraywithincludefun.js` | Check if a number exists using `includes()` method |
+| `10_getIndexOfEleWithOutIndexOf.js` | Get index of an element without using `indexOf()` — using `for` loop |
+| `11_getIndexOfEleWithOutIndexOfUsingforInloop.js` | Get index of an element without using `indexOf()` — using `for...in` loop |
+
+### Arrays Coding Challenges
+
+| # | Question | Concept | Description |
+|---|----------|---------|-------------|
+| 1 | Sum of Elements | `for` loop + accumulation | Calculate sum of all array elements |
+| 2 | Average of Elements | `for` loop + division | Calculate average of array elements |
+| 3 | Count Without `.length` | `for...of` loop | Count elements without using `.length` |
+| 4 | Count Even Numbers | `for` loop + `%` | Count even numbers in an array |
+| 5 | Print Positive Numbers | `for` loop + condition | Filter and print positive numbers |
+| 6 | Print Negative Numbers | `for` loop + condition | Filter and print negative numbers |
+| 7 | Second & Second-Last | Index-based access | Find second and second-last elements |
+| 8 | Check Number Exists | `for` loop + comparison | Check if a number exists in array |
+| 9 | Check with `includes()` | `includes()` method | Check number existence using built-in method |
+| 10 | Get Index Without `indexOf()` | `for` loop | Find element index without built-in method |
+| 11 | Get Index with `for...in` | `for...in` loop | Find element index using `for...in` loop |
+
+### Run Commands
+
+```bash
+# Arrays
+node chapter_12_JavascriptCodingAssignments/Arrays/1_findSumofAllElementsArray.js
+node chapter_12_JavascriptCodingAssignments/Arrays/11_getIndexOfEleWithOutIndexOfUsingforInloop.js
+```
+
 ### if-else — Level 2
 
 **Folder:** `chapter_12_JavascriptCodingAssignments/if-else/`
@@ -576,7 +618,7 @@ Copy this prompt and use it with your AI assistant:
         │
 10. Arrays Concepts ────────► Creation, methods, iteration, searching
         │
-11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome) & if-else (largest/smallest, leap year, vote, electricity bill)
+11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (sum, avg, count, positive/negative, index finding)
         │
 12. Playwright 3x ──────────► (Coming next!)
 ```
