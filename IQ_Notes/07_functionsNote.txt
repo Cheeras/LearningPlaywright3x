@@ -1,0 +1,18 @@
+What is function in javascript?
+
+A function is a reusable block of code that performs a specific task
+instead of repeating logic, you define it once and call it whenever needed
+
+1. Define/Definition of function
+2.Calling of function
+
+
+Definition
+function name(let i){ //here i is called parameter
+------
+----
+<function body>
+}
+
+function Calling
+name(30)//here 30 is called argument
