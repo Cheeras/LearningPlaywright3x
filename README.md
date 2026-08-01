@@ -20,7 +20,8 @@
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays: sum, average, count, positive/negative, index finding** |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide** |
+| 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes** |
 
 ---
 
@@ -569,6 +570,73 @@ node chapter_12_JavascriptCodingAssignments/Arrays/11_getIndexOfEleWithOutIndexO
 
 ---
 
+## Chapter 13: Functions Concept
+
+**Folder:** `chapter_13_functionsconcept/`
+
+| File | Description |
+|------|-------------|
+| `90_function.js` | Why functions? — without function (repetition) vs with function (reusable `checkResult`) |
+| `91_function.js` | Why functions? — repeated sum logic vs reusable `calSum` function |
+| `92_function2.js` | Function basics — `sayHello` with parameter, calling vs defining |
+| `93_typeoffunction.js` | 4 function types overview — no return/no param, no return/with param, return/no param, return/with param |
+| `94_Type1_withnoparam_noreturn.js` | **Type 1:** No parameter, no return value — `greet()`, `displayMessage()` |
+| `95_Type1_withnoparam_noreturn_WithRealWorldScenario.js` | **Type 1 — Real-world:** Browser automation steps — open, navigate, click, fill, submit, close |
+| `96_Type2_withnoparam_withReturn.js` | **Type 2:** No parameter, with return value — `getCurrentDate()`, `getRandomNumber()`, `getGreetingMessage()` |
+| `97_Type3_Withparam_withOutReturn.js` | **Type 3:** With parameter, no return value — `greetUser(name)` — parameter vs argument distinction |
+| `98_Type4_withParam_withReturn.js` | **Type 4:** With parameter, with return value — `sum(a,b)`, `multiply(x,y)` |
+| `99_Type4_withParam_withReturn_WithRealTimeScenarios.js` | **Type 4 — Real-world:** Rectangle area calculator, tax calculation, final price with tax |
+| `100_Templete_literal.js` | Template literals — `` `Hello ${name}` `` syntax for string interpolation |
+| `101_function_With_Expression.js` | Function expressions — `const greet2 = function(name) { ... }` |
+| `102_function_withArrow.js` | Arrow functions — `const greet3 = (name) => { ... }`, implicit return, single-parameter shorthand |
+
+### Function Types Overview
+
+| Type | Parameters | Return Value | Example | Use Case |
+|------|-----------|--------------|---------|----------|
+| **Type 1** | ❌ No | ❌ No | `greet()` | Logging, side effects |
+| **Type 2** | ❌ No | ✅ Yes | `getCurrentDate()` | Generating values, API calls |
+| **Type 3** | ✅ Yes | ❌ No | `greetUser(name)` | Displaying user-specific messages |
+| **Type 4** | ✅ Yes | ✅ Yes | `sum(a, b)` | Calculations, data processing |
+
+### Function Definition vs Calling
+
+```javascript
+// Definition — parameter (placeholder)
+function greetUser(name) {
+    console.log("Hello " + name);
+}
+
+// Calling — argument (actual value)
+greetUser("Alice"); // "Alice" is the argument
+```
+
+### Function Declaration Styles
+
+| Style | Syntax | Hoisted? | Use Case |
+|-------|--------|----------|----------|
+| **Function Declaration** | `function name() {}` | ✅ Yes | Named reusable functions |
+| **Function Expression** | `const fn = function() {}` | ❌ No | Callbacks, assignments |
+| **Arrow Function** | `const fn = () => {}` | ❌ No | Concise syntax, `this` binding |
+
+### Key Concepts
+
+- **Functions** are reusable blocks of code — define once, call anywhere
+- **Parameters** are placeholders in function definition; **arguments** are actual values passed during calling
+- **4 function types** based on parameters and return values
+- **Template literals** (`` ` ``) enable string interpolation with `${}`
+- **Function expressions** store functions in variables
+- **Arrow functions** provide concise syntax with implicit return for single expressions
+
+### Run Commands
+
+```bash
+node chapter_13_functionsconcept/90_function.js
+node chapter_13_functionsconcept/102_function_withArrow.js
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -582,6 +650,7 @@ node chapter_12_JavascriptCodingAssignments/Arrays/11_getIndexOfEleWithOutIndexO
 | `04_commands_win.md` | VS Code keyboard shortcuts for Windows |
 | `05_incrementanddecrement.txt` | Increment (`++`) and decrement (`--`) operator reference — pre/post variants |
 | `06_SwitchCaseStatement.txt` | Switch case statement syntax, step-by-step execution, strict comparison behavior |
+| `07_functionsNote.txt` | Functions basics — definition vs calling, parameter vs argument |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
@@ -620,7 +689,9 @@ Copy this prompt and use it with your AI assistant:
         │
 11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (sum, avg, count, positive/negative, index finding)
         │
-12. Playwright 3x ──────────► (Coming next!)
+12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions
+        │
+13. Playwright 3x ──────────► (Coming next!)
 ```
 
 ---
