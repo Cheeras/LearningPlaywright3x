@@ -19,7 +19,7 @@
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch), factorial, circle/rectangle area & perimeter, grade calculator, array problems (max, min, frequency, duplicates, reverse) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
-| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence** |
+| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes** |
 
@@ -516,7 +516,7 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 
 ### Arrays — Beginner
 
-**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/begineer/`
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/01_begineer/`
 
 | File | Description |
 |------|-------------|
@@ -534,7 +534,7 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 
 ### Arrays — Intermediate
 
-**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/`
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/02_Intermediate/`
 
 | File | Description |
 |------|-------------|
@@ -576,17 +576,45 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | 8 | Count Occurrences | `for` loop + counter | Count how many times a number appears |
 | 9 | First Occurrence | `for` loop + `break` | First index of a number without `indexOf()` |
 | 10 | Last Occurrence | `for` loop + overwrite | Last index of a number without `lastIndexOf()` |
+| **Advanced** | | | |
+| 1 | Reverse Array | Two-pointer swapping | Reverse an array in-place without built-in methods |
+| 2 | Remove Duplicates | Manual tracking | Remove duplicate elements without using `Set` |
+| 3 | Move Zeros to End | Shift + fill | Move all zeros to the end while preserving element order |
+| 4 | Move Zeros to Front | Reverse traversal + fill | Move all zeros to the front while preserving element order |
+| 5 | Merge Two Arrays | `for` loop + `push()` | Merge two arrays without using spread or `concat()` |
+| 6 | Copy Array Without Spread/Inbuilt | Manual `for` loop | Copy an array without spread operator or built-in methods |
+
+### Arrays — Advanced
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/`
+
+| File | Description |
+|------|-------------|
+| `ReverseArray.js` | Reverse an array in-place using two-pointer swapping technique |
+| `RemoveDuplicateElements.js` | Remove duplicate elements from an array without using `Set` |
+| `MovingAllZerosAttheEnd.js` | Move all zeros to the end of the array while preserving relative order |
+| `MovingAllZerosAttheFront.js` | Move all zeros to the front of the array while preserving relative order |
+| `MergingArrays.js` | Merge two arrays without using spread operator or `concat()` |
+| `ArrayCopyWithoutSpreadandInbuilt.js` | Copy an array without using spread operator or built-in copy methods |
 
 ### Run Commands
 
 ```bash
 # Arrays — Beginner
-node chapter_12_JavascriptCodingAssignments/Arrays/begineer/1_findSumofAllElementsArray.js
-node chapter_12_JavascriptCodingAssignments/Arrays/begineer/11_getIndexOfEleWithOutIndexOfUsingforInloop.js
+node chapter_12_JavascriptCodingAssignments/Arrays/01_begineer/1_findSumofAllElementsArray.js
+node chapter_12_JavascriptCodingAssignments/Arrays/01_begineer/11_getIndexOfEleWithOutIndexOfUsingforInloop.js
 
 # Arrays — Intermediate
-node chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/1_SecondLargest_WithoutSort.js
-node chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/10_last_Occurance_Index.js
+node chapter_12_JavascriptCodingAssignments/Arrays/02_Intermediate/1_SecondLargest_WithoutSort.js
+node chapter_12_JavascriptCodingAssignments/Arrays/02_Intermediate/10_last_Occurance_Index.js
+
+# Arrays — Advanced
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/ReverseArray.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RemoveDuplicateElements.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MovingAllZerosAttheEnd.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MovingAllZerosAttheFront.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MergingArrays.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/ArrayCopyWithoutSpreadandInbuilt.js
 ```
 
 ### if-else — Level 2
@@ -720,7 +748,7 @@ Copy this prompt and use it with your AI assistant:
         │
 10. Arrays Concepts ────────► Creation, methods, iteration, searching
         │
-11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (Beginner: sum, avg, count, positive/negative, index finding · Intermediate: second largest/smallest, max−min difference, even/odd arrays, first/last occurrence)
+| 11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (Beginner: sum, avg, count, positive/negative, index finding · Intermediate: second largest/smallest, max−min difference, even/odd arrays, first/last occurrence · Advanced: reverse, remove duplicates, move zeros, merge, copy without inbuilt)
         │
 12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions
         │
