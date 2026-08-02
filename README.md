@@ -19,7 +19,7 @@
 | 9 | [HackerRank Challenge](#chapter-9-hackerrank-challenge) | Grade classification (if...else), number-to-word converter (switch), factorial, circle/rectangle area & perimeter, grade calculator, array problems (max, min, frequency, duplicates, reverse) |
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
-| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays: sum, average, count, positive/negative, index finding** |
+| 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes** |
 
@@ -514,9 +514,9 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q1_print1to10numbers.js
 node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 ```
 
-### Arrays — Level 3
+### Arrays — Beginner
 
-**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/`
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/begineer/`
 
 | File | Description |
 |------|-------------|
@@ -532,10 +532,28 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | `10_getIndexOfEleWithOutIndexOf.js` | Get index of an element without using `indexOf()` — using `for` loop |
 | `11_getIndexOfEleWithOutIndexOfUsingforInloop.js` | Get index of an element without using `indexOf()` — using `for...in` loop |
 
+### Arrays — Intermediate
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/`
+
+| File | Description |
+|------|-------------|
+| `1_SecondLargest_WithoutSort.js` | Find the second largest number without using `sort()` — single-pass tracking |
+| `2_SecondSmallest_WithoutSort.js` | Find the second smallest number without using `sort()` — single-pass tracking |
+| `3_Diff_Max_Vs_Min_Array.js` | Difference between the maximum and minimum element in an array |
+| `4_Array_Containing_only_even.js` | Build a new array containing only even numbers |
+| `5_Array_Containing_only_Odd.js` | Build a new array containing only odd numbers |
+| `6_Separate_posi_Nega.js` | Separate positive and negative numbers into two arrays |
+| `7_find_All_elements_greater_given.js` | Find all elements greater than a given threshold value |
+| `8_Count_Of_givenNumber.js` | Count how many times a given number appears in an array |
+| `9_first_Occurance_Index.js` | Find the first occurrence index of a number without using `indexOf()` — `break` on first match |
+| `10_last_Occurance_Index.js` | Find the last occurrence index of a number without using `lastIndexOf()` — keep updating on each match |
+
 ### Arrays Coding Challenges
 
 | # | Question | Concept | Description |
 |---|----------|---------|-------------|
+| **Beginner** | | | |
 | 1 | Sum of Elements | `for` loop + accumulation | Calculate sum of all array elements |
 | 2 | Average of Elements | `for` loop + division | Calculate average of array elements |
 | 3 | Count Without `.length` | `for...of` loop | Count elements without using `.length` |
@@ -547,13 +565,28 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | 9 | Check with `includes()` | `includes()` method | Check number existence using built-in method |
 | 10 | Get Index Without `indexOf()` | `for` loop | Find element index without built-in method |
 | 11 | Get Index with `for...in` | `for...in` loop | Find element index using `for...in` loop |
+| **Intermediate** | | | |
+| 1 | Second Largest | Two-variable tracking | Second largest number without `sort()` |
+| 2 | Second Smallest | Two-variable tracking | Second smallest number without `sort()` |
+| 3 | Max − Min Difference | Track max & min | Difference between largest and smallest elements |
+| 4 | Only Even Array | `for` loop + `push()` | Filter even numbers into a new array |
+| 5 | Only Odd Array | `for` loop + `push()` | Filter odd numbers into a new array |
+| 6 | Separate Pos/Neg | Two arrays + `push()` | Split numbers into positive and negative arrays |
+| 7 | Greater Than Threshold | `for` loop + `push()` | Collect elements above a given value |
+| 8 | Count Occurrences | `for` loop + counter | Count how many times a number appears |
+| 9 | First Occurrence | `for` loop + `break` | First index of a number without `indexOf()` |
+| 10 | Last Occurrence | `for` loop + overwrite | Last index of a number without `lastIndexOf()` |
 
 ### Run Commands
 
 ```bash
-# Arrays
-node chapter_12_JavascriptCodingAssignments/Arrays/1_findSumofAllElementsArray.js
-node chapter_12_JavascriptCodingAssignments/Arrays/11_getIndexOfEleWithOutIndexOfUsingforInloop.js
+# Arrays — Beginner
+node chapter_12_JavascriptCodingAssignments/Arrays/begineer/1_findSumofAllElementsArray.js
+node chapter_12_JavascriptCodingAssignments/Arrays/begineer/11_getIndexOfEleWithOutIndexOfUsingforInloop.js
+
+# Arrays — Intermediate
+node chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/1_SecondLargest_WithoutSort.js
+node chapter_12_JavascriptCodingAssignments/Arrays/Intermediate/10_last_Occurance_Index.js
 ```
 
 ### if-else — Level 2
@@ -687,7 +720,7 @@ Copy this prompt and use it with your AI assistant:
         │
 10. Arrays Concepts ────────► Creation, methods, iteration, searching
         │
-11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (sum, avg, count, positive/negative, index finding)
+11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (Beginner: sum, avg, count, positive/negative, index finding · Intermediate: second largest/smallest, max−min difference, even/odd arrays, first/last occurrence)
         │
 12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions
         │
