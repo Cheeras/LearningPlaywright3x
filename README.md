@@ -583,6 +583,10 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | 4 | Move Zeros to Front | Reverse traversal + fill | Move all zeros to the front while preserving element order |
 | 5 | Merge Two Arrays | `for` loop + `push()` | Merge two arrays without using spread or `concat()` |
 | 6 | Copy Array Without Spread/Inbuilt | Manual `for` loop | Copy an array without spread operator or built-in methods |
+| 7 | Swap First & Last Elements | Temp variable swap | Swap the first and last elements of an array |
+| 8 | Rotate Left by One | Variable shift | Rotate array elements by one position to the left |
+| 9 | Rotate Right by One | `for...in` loop | Rotate array elements by one position to the right |
+| 10 | Rotate by K Positions | Modular normalization | Rotate array elements by K positions (cyclic rotation) |
 
 ### Arrays — Advanced
 
@@ -596,6 +600,10 @@ node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
 | `MovingAllZerosAttheFront.js` | Move all zeros to the front of the array while preserving relative order |
 | `MergingArrays.js` | Merge two arrays without using spread operator or `concat()` |
 | `ArrayCopyWithoutSpreadandInbuilt.js` | Copy an array without using spread operator or built-in copy methods |
+| `SwappingfirstandLastelements.js` | Swap the first and last elements of the array using a temporary variable |
+| `RotateArrayElementsbyoneleft.js` | Rotate array elements by one position to the left using variable shift |
+| `RotateArrayElementsbyoneright.js` | Rotate array elements by one position to the right using `for...in` loop |
+| `RotateArrayElementsbykpositions.js` | Rotate array elements by K positions using modular normalization |
 
 ### Run Commands
 
@@ -615,6 +623,10 @@ node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MovingAllZerosAtt
 node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MovingAllZerosAttheFront.js
 node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/MergingArrays.js
 node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/ArrayCopyWithoutSpreadandInbuilt.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/SwappingfirstandLastelements.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RotateArrayElementsbyoneleft.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RotateArrayElementsbyoneright.js
+node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RotateArrayElementsbykpositions.js
 ```
 
 ### if-else — Level 2
