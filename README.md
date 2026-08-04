@@ -22,6 +22,7 @@
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions, IIFE, spread operator, hoisting (var/let/const/function), TDZ, scope comparison |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)** |
+| 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
 ---
 
@@ -779,6 +780,16 @@ Copy this prompt and use it with your AI assistant:
 
 ---
 
+## 🗺️ RoadMap
+
+**Folder:** `RoadMap/`
+
+| File | Description |
+|------|-------------|
+| `PlaywrightRoadMap.pdf` | Playwright learning roadmap — visual guide covering the complete learning path from basics to advanced Playwright automation |
+
+---
+
 ## 🎯 Learning Path
 
 ```
@@ -807,6 +818,8 @@ Copy this prompt and use it with your AI assistant:
 12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions, IIFE, spread, hoisting (var/let/const/function), TDZ, scope
         │
 13. Playwright 3x ──────────► (Coming next!)
+        │
+🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
 
 ---
