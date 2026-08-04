@@ -20,8 +20,8 @@
 | 10 | [Loops Concepts](#chapter-10-loops-concepts) | For loop, while loop, do-while loop, nested loops, interview questions |
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
-| 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes** |
+| 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions, IIFE, spread operator, hoisting (var/let/const/function), TDZ, scope comparison |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)** |
 
 ---
 
@@ -661,7 +661,20 @@ node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RotateArrayElemen
 | `99_Type4_withParam_withReturn_WithRealTimeScenarios.js` | **Type 4 — Real-world:** Rectangle area calculator, tax calculation, final price with tax |
 | `100_Templete_literal.js` | Template literals — `` `Hello ${name}` `` syntax for string interpolation |
 | `101_function_With_Expression.js` | Function expressions — `const greet2 = function(name) { ... }` |
-| `102_function_withArrow.js` | Arrow functions — `const greet3 = (name) => { ... }`, implicit return, single-parameter shorthand |
+| `102_function_withArrow.js` | ~~Deleted~~ — replaced by `102_Arrow_fn_Real.js`, `102_IIFE_fun.js`, `103_function_withArrow_Part2.js`, `104_function_withArrow.js` |
+| `102_Arrow_fn_Real.js` | **NEW!** Arrow function with real-world scenario — HTTP status code validation (normal function, function expression, arrow function) |
+| `102_IIFE_fun.js` | **NEW!** IIFE (Immediately Invoked Function Expression) — anonymous, arrow, and named function patterns |
+| `103_function_withArrow_Part2.js` | **NEW!** Arrow functions — converting normal functions to arrow, implicit return, single-parameter shorthand |
+| `104_function_withArrow.js` | **NEW!** Function expression with arrow functions — implicit return, single parameter shorthand |
+| `104_Return_function.js` | **NEW!** Return function — HTTP status code classification with return values, `undefined` when no return |
+| `105_spreadfunction.js` | **NEW!** Spread function — spread operator with functions, rest parameters, `some()` method |
+| `106_Hostingconcept.js` | **NEW!** Hoisting concept — `var` hoisting with `undefined` initialization, mental model explanation |
+| `107_Var_Hoisting.js` | **NEW!** Var hoisting — greeting variable hoisting example |
+| `108_let_hoisting.js` | **NEW!** Let hoisting — `ReferenceError` due to Temporal Dead Zone (TDZ) |
+| `109_function_Hoisting.js` | **NEW!** Function hoisting — `var` inside function scope with hoisting |
+| `110_let.js` | **NEW!** Let and TDZ — Temporal Dead Zone with block scope |
+| `111_IQ.js` | **NEW!** IQ: `var` function scope vs `let` block scope — redeclaration behavior |
+| `112_var_let_const.js` | **NEW!** `var` vs `let` vs `const` — scope, redeclaration, hoisting comparison |
 
 ### Function Types Overview
 
@@ -691,6 +704,17 @@ greetUser("Alice"); // "Alice" is the argument
 | **Function Declaration** | `function name() {}` | ✅ Yes | Named reusable functions |
 | **Function Expression** | `const fn = function() {}` | ❌ No | Callbacks, assignments |
 | **Arrow Function** | `const fn = () => {}` | ❌ No | Concise syntax, `this` binding |
+| **IIFE** | `(function() {})()` | ❌ No | Immediate execution, isolation |
+
+### Hoisting Behavior
+
+| Declaration Type | Hoisted? | Initial Value | Accessible Before Declaration? |
+|-----------------|----------|---------------|-------------------------------|
+| `var` | ✅ Yes | `undefined` | ✅ Yes (returns `undefined`) |
+| `let` | ✅ Yes | ❌ Uninitialized (TDZ) | ❌ No (`ReferenceError`) |
+| `const` | ✅ Yes | ❌ Uninitialized (TDZ) | ❌ No (`ReferenceError`) |
+| `function` | ✅ Yes | Function body | ✅ Yes |
+| `class` | ✅ Yes | ❌ Uninitialized (TDZ) | ❌ No (`ReferenceError`) |
 
 ### Key Concepts
 
@@ -700,12 +724,28 @@ greetUser("Alice"); // "Alice" is the argument
 - **Template literals** (`` ` ``) enable string interpolation with `${}`
 - **Function expressions** store functions in variables
 - **Arrow functions** provide concise syntax with implicit return for single expressions
+- **IIFE** (Immediately Invoked Function Expression) — executes as soon as defined, useful for isolation
+- **Spread operator** (`...`) — expands arrays into individual arguments in function calls
+- **Rest parameters** (`...codes`) — collects multiple arguments into an array
+- **Hoisting** — declarations moved to top of scope during compilation; `var` initialized with `undefined`, `let`/`const` in TDZ
 
 ### Run Commands
 
 ```bash
 node chapter_13_functionsconcept/90_function.js
-node chapter_13_functionsconcept/102_function_withArrow.js
+node chapter_13_functionsconcept/102_Arrow_fn_Real.js
+node chapter_13_functionsconcept/102_IIFE_fun.js
+node chapter_13_functionsconcept/103_function_withArrow_Part2.js
+node chapter_13_functionsconcept/104_function_withArrow.js
+node chapter_13_functionsconcept/104_Return_function.js
+node chapter_13_functionsconcept/105_spreadfunction.js
+node chapter_13_functionsconcept/106_Hostingconcept.js
+node chapter_13_functionsconcept/107_Var_Hoisting.js
+node chapter_13_functionsconcept/108_let_hoisting.js
+node chapter_13_functionsconcept/109_function_Hoisting.js
+node chapter_13_functionsconcept/110_let.js
+node chapter_13_functionsconcept/111_IQ.js
+node chapter_13_functionsconcept/112_var_let_const.js
 ```
 
 ---
@@ -724,6 +764,8 @@ node chapter_13_functionsconcept/102_function_withArrow.js
 | `05_incrementanddecrement.txt` | Increment (`++`) and decrement (`--`) operator reference — pre/post variants |
 | `06_SwitchCaseStatement.txt` | Switch case statement syntax, step-by-step execution, strict comparison behavior |
 | `07_functionsNote.txt` | Functions basics — definition vs calling, parameter vs argument |
+| `08_Hoisting_let_var_const.md` | **NEW!** Hoisting comparison table — `var` vs `let` vs `const` (hoisted, TDZ, scope, reassign, redeclare) |
+| `09_Hoisting_complete_Guide.md` | **NEW!** Complete hoisting guide — definition, JS engine phases (Memory Creation → Execution), `var`/`let`/`const` hoisting, function hoisting, class hoisting, TDZ, interview questions |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
@@ -762,7 +804,7 @@ Copy this prompt and use it with your AI assistant:
         │
 | 11. JS Coding Assignments ──► Fundamentals (print, sum, factorial, reverse, Armstrong, palindrome), if-else (largest/smallest, leap year, vote, electricity bill) & Arrays (Beginner: sum, avg, count, positive/negative, index finding · Intermediate: second largest/smallest, max−min difference, even/odd arrays, first/last occurrence · Advanced: reverse, remove duplicates, move zeros, merge, copy without inbuilt)
         │
-12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions
+12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions, IIFE, spread, hoisting (var/let/const/function), TDZ, scope
         │
 13. Playwright 3x ──────────► (Coming next!)
 ```
