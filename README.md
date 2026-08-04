@@ -787,6 +787,7 @@ Copy this prompt and use it with your AI assistant:
 | File | Description |
 |------|-------------|
 | `PlaywrightRoadMap.pdf` | Playwright learning roadmap — visual guide covering the complete learning path from basics to advanced Playwright automation |
+| `90 Days Playwright(JS_TS) + AI Curriculum.xlsx` | 90-day structured curriculum combining Playwright (JS/TS) with AI — day-wise plan, topics, and milestones |
 
 ---
 
