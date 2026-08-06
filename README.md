@@ -21,6 +21,7 @@
 | 11 | [Arrays Concepts](#chapter-11-arrays-concepts) | Array creation, accessing, modifying, adding/removing, searching, iteration, transformation, sorting, slicing, concatenation, checking, copying, destructuring, real-time examples, interview questions |
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions, IIFE, spread operator, hoisting (var/let/const/function), TDZ, scope comparison |
+| 14 | [Function Closure](#chapter-14-function-closure) | Scope of functions, closure basics, closure remembers, real-world closure (retry tracker, rate limiter) |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -751,6 +752,59 @@ node chapter_13_functionsconcept/112_var_let_const.js
 
 ---
 
+## Chapter 14: Function Closure
+
+**Folder:** `chapter_14_function_closure/`
+
+| File | Description |
+|------|-------------|
+| `115_Scope_of_Functions.js` | **Scope in Functions** — global vs local scope, nested function scope (inner can access outer, but not vice versa) |
+| `116_Closure.js` | **Closure Basics** — inner function `installBrowser` closing over `name` from outer `startBrowser`, returned and called later |
+| `117_Closure_Remembers.js` | **Closure Remembers** — `makeCounter` with `increment()`, `decrement()`, `get()` methods — closure preserves `count` across calls |
+| `118_function_Closure_Real.js` | **Real-world Closure** — `maxRetryTracker(max)` — retry tracker for test cases using closure to persist `attempts` count |
+| `119_function_simple.js` | **Rate Limiter** — `makeRateLimiter(limit)` — closure-based rate limiter tracking call count |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **Function Scope** | Variables declared inside a function are local to that function; inner functions can access outer variables | `inner()` accessing `x` from `outer()` |
+| **Closure** | A function that "remembers" its lexical scope even when executed outside that scope | `installBrowser` returned from `startBrowser` still accesses `name` |
+| **Closure for State** | Closure preserves variable state between function calls | `counter.get()` returns updated `count` after each `increment()` |
+| **Real-world: Retry Tracker** | Track retry attempts for test cases using closure | `runTCRetry("Login")` increments attempts each call |
+| **Real-world: Rate Limiter** | Limit how many times an operation can be called | `limiter()` returns `false` after 3 calls |
+
+### Closure Execution Flow
+
+```
+makeCounter(0) called
+      │
+      ▼
+count = 0  (local variable in closure)
+      │
+      ▼
+Returns { increment, decrement, get }
+      │
+      ▼
+counter.increment()  ──► count becomes 1
+counter.increment()  ──► count becomes 2
+counter.increment()  ──► count becomes 3
+counter.get()        ──► returns 3
+counter.decrement()  ──► count becomes 2
+```
+
+### Run Commands
+
+```bash
+node chapter_14_function_closure/115_Scope_of_Functions.js
+node chapter_14_function_closure/116_Closure.js
+node chapter_14_function_closure/117_Closure_Remembers.js
+node chapter_14_function_closure/118_function_Closure_Real.js
+node chapter_14_function_closure/119_function_simple.js
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -818,7 +872,9 @@ Copy this prompt and use it with your AI assistant:
         │
 12. Functions Concept ──────► Function types, parameters, return values, template literals, expressions, arrow functions, IIFE, spread, hoisting (var/let/const/function), TDZ, scope
         │
-13. Playwright 3x ──────────► (Coming next!)
+13. Function Closure ───────► Scope, closure basics, closure remembers state, real-world retry tracker & rate limiter
+        │
+14. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
