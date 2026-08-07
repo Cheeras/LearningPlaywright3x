@@ -22,6 +22,7 @@
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions, IIFE, spread operator, hoisting (var/let/const/function), TDZ, scope comparison |
 | 14 | [Function Closure](#chapter-14-function-closure) | Scope of functions, closure basics, closure remembers, real-world closure (retry tracker, rate limiter) |
+| 15 | [Strings](#chapter-15-strings) | String basics, string methods, searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()` |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -763,6 +764,10 @@ node chapter_13_functionsconcept/112_var_let_const.js
 | `117_Closure_Remembers.js` | **Closure Remembers** — `makeCounter` with `increment()`, `decrement()`, `get()` methods — closure preserves `count` across calls |
 | `118_function_Closure_Real.js` | **Real-world Closure** — `maxRetryTracker(max)` — retry tracker for test cases using closure to persist `attempts` count |
 | `119_function_simple.js` | **Rate Limiter** — `makeRateLimiter(limit)` — closure-based rate limiter tracking call count |
+| `120_function_Closure.js` | **Basic Closure Example** — inner function remembers outer variable even after outer function finishes |
+| `121_function_closure_withChocolateBox.js` | **Chocolate Box Closure** — closure preserving the remaining chocolates count across calls |
+| `122_function_closure_withMoneySaving.js` | **Piggy Bank Closure** — closure preserving the saved money amount across repeated calls |
+| `123_function_closure_Game.js` | **Game Score Closure** — closure preserving the score in a simple game example |
 
 ### Key Concepts
 
@@ -801,6 +806,36 @@ node chapter_14_function_closure/116_Closure.js
 node chapter_14_function_closure/117_Closure_Remembers.js
 node chapter_14_function_closure/118_function_Closure_Real.js
 node chapter_14_function_closure/119_function_simple.js
+node chapter_14_function_closure/120_function_Closure.js
+node chapter_14_function_closure/121_function_closure_withChocolateBox.js
+node chapter_14_function_closure/122_function_closure_withMoneySaving.js
+node chapter_14_function_closure/123_function_closure_Game.js
+```
+
+---
+
+## Chapter 15: Strings
+
+**Folder:** `chapter_15_Strings/`
+
+| File | Description |
+|------|-------------|
+| `124_String.js` | String basics — declaration, concatenation, and common string usage |
+| `125_String_function.js` | String methods — case conversion, trimming, slicing, and replacements |
+| `126_String_searching.js` | String searching — `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()` |
+
+### Key Concepts
+
+- Strings are immutable in JavaScript, so methods return a new string rather than modifying the original
+- Searching methods help validate URLs, filter text, and inspect content quickly
+- String methods are commonly used in automation and real-world web testing scenarios
+
+### Run Commands
+
+```bash
+node chapter_15_Strings/124_String.js
+node chapter_15_Strings/125_String_function.js
+node chapter_15_Strings/126_String_searching.js
 ```
 
 ---
