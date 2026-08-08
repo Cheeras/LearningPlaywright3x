@@ -22,8 +22,9 @@
 | 12 | [JavaScript Coding Assignments](#chapter-12-javascript-coding-assignments) | Fundamentals: print, even/odd, sum, factorial, reverse, count digits, Armstrong, palindrome; if-else: largest/smallest of 3, leap year, vote eligibility, electricity bill; **Arrays (Beginner + Intermediate): sum, average, count, positive/negative, index finding, second largest/smallest, max-min difference, even/odd arrays, first/last occurrence; Arrays (Advanced): reverse, remove duplicates, move zeros, merge, copy without inbuilt** |
 | 13 | [Functions Concept](#chapter-13-functions-concept) | Function types, parameters, return values, template literals, function expressions, arrow functions, IIFE, spread operator, hoisting (var/let/const/function), TDZ, scope comparison |
 | 14 | [Function Closure](#chapter-14-function-closure) | Scope of functions, closure basics, closure remembers, real-world closure (retry tracker, rate limiter) |
-| 15 | [Strings](#chapter-15-strings) | String basics, string methods, searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()` |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)** |
+| 15 | [Strings](#chapter-15-strings) | String basics, string methods, searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()`, **substring extraction, case conversion, replace/replaceAll, split/join, string conversion, string cheatsheet** |
+| 16 | [Objects](#chapter-16-objects) | Object basics, dot/bracket notation, reference vs value, config objects, methods, nested properties, JSON vs object syntax |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
 ---
@@ -644,6 +645,28 @@ node chapter_12_JavascriptCodingAssignments/Arrays/03_advanced/RotateArrayElemen
 | `voteeligibility.js` | Vote eligibility check based on age (with invalid age guard) |
 | `electricitybillgenerate.js` | Electricity bill calculator — tiered slab rates (100/200/300+ units) |
 
+### Strings — Coding Assignments
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/Strings/`
+
+| File | Description |
+|------|-------------|
+| `palindromprogram.js` | Check if a string is a palindrome — reverse string using `charAt()` and compare with original |
+| `stringreverse.js` | Reverse a string — iterate from last index to first using `charAt()` and build reversed string |
+
+| # | Question | Concept | Description |
+|---|----------|---------|-------------|
+| 1 | String Reverse | `for` loop + `charAt()` | Reverse a string by iterating backward |
+| 2 | Palindrome Check | Reverse + compare | Check if string reads same forward and backward |
+
+### Run Commands
+
+```bash
+# Strings
+node chapter_12_JavascriptCodingAssignments/Strings/stringreverse.js
+node chapter_12_JavascriptCodingAssignments/Strings/palindromprogram.js
+```
+
 ---
 
 ## Chapter 13: Functions Concept
@@ -823,12 +846,21 @@ node chapter_14_function_closure/123_function_closure_Game.js
 | `124_String.js` | String basics — declaration, concatenation, and common string usage |
 | `125_String_function.js` | String methods — case conversion, trimming, slicing, and replacements |
 | `126_String_searching.js` | String searching — `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()` |
+| `127_substring_extract.js` | **NEW!** Substring extraction — `slice()` (supports negative indexes), `substring()` (no negative), `at()` for positive/negative indexing |
+| `128_string_more.js` | **NEW!** More string methods — `toUpperCase()`, `toLowerCase()`, `trim()`, `trimStart()`, `trimEnd()`, `replace()`, `replaceAll()`, `replace()` with regex `/g`, string concatenation methods |
+| `129_string_extra.js` | **NEW!** Extra string operations — `replace()` with regex global flag, `split()` by comma/character, `join()` with custom separator, template literal formatting |
+| `130_Stringconversion.js` | **NEW!** String conversions — `toString()`, `Number()`, `parseInt()`, string immutability demonstration |
+| `javascript_stringcheatsheet.md` | **NEW!** JavaScript String Methods Cheat Sheet — quick reference table for all common string methods (search, extract, transform, split/join, padding, repeat) with one-liner examples |
 
 ### Key Concepts
 
 - Strings are immutable in JavaScript, so methods return a new string rather than modifying the original
 - Searching methods help validate URLs, filter text, and inspect content quickly
 - String methods are commonly used in automation and real-world web testing scenarios
+- `slice()` supports negative indexing (counts from end); `substring()` treats negatives as `0`
+- `replace()` replaces first match; `replaceAll()` or regex with `/g` flag replaces all matches
+- `split()` converts string → array; `join()` converts array → string
+- `parseInt()` extracts integers from strings with trailing characters (e.g., `"42px"` → `42`)
 
 ### Run Commands
 
@@ -836,6 +868,54 @@ node chapter_14_function_closure/123_function_closure_Game.js
 node chapter_15_Strings/124_String.js
 node chapter_15_Strings/125_String_function.js
 node chapter_15_Strings/126_String_searching.js
+node chapter_15_Strings/127_substring_extract.js
+node chapter_15_Strings/128_string_more.js
+node chapter_15_Strings/129_string_extra.js
+node chapter_15_Strings/130_Stringconversion.js
+```
+
+---
+
+## Chapter 16: Objects
+
+**Folder:** `chapter_16_Objects/`
+
+| File | Description |
+|------|-------------|
+| `131_Objects.js` | Object basics — dot vs bracket notation, case-sensitive keys, reference copying (`let b = a3`), JSON vs object notation |
+| `132_Object_Person.js` | **Comprehensive user object** — strings, numbers, booleans, null, undefined, nested objects (address → coordinates), arrays (hobbies), array of objects (skills, education, workExperience), methods (regular + arrow), nested methods, `const` mutation demonstration |
+| `133_callref_callbyValue.js` | **Call by Value vs Call by Reference** — primitives copied by value (independent), objects copied by reference (shared mutation) |
+| `134_config.js` | Empty config object — adding, updating, and deleting properties dynamically |
+| `135_Objectexample.js` | Object vs JSON syntax — dot/bracket access, key quoting differences |
+| `136_Object.js` | Object with method — `getName()` using `this.name` |
+| `137_Object2.js` | Object creation, property access (dot + bracket), adding/modifying properties |
+| `138_ObjectExample2.js` | Product object — properties (name, id, batch, yearOfMake) and `getProduct()` method with template literal |
+| `139_Object_config.js` | Config object pattern — dynamic property addition, update, and deletion |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **Dot Notation** | Access property with `.` — key must be valid identifier | `user.name` |
+| **Bracket Notation** | Access property with `[]` — supports dynamic keys and special chars | `user["full name"]` |
+| **Reference Copying** | Objects are assigned by reference, not by value | `let b = a; b.x = 1` affects `a.x` |
+| **Call by Value** | Primitives are copied independently | `let b = a; b = 5` does NOT affect `a` |
+| **Call by Reference** | Objects share the same memory reference | `let obj2 = obj1; obj2.val = 99` changes `obj1.val` |
+| **Methods** | Functions inside objects, accessed with `()` | `user.getName()` |
+| **`const` with Objects** | `const` prevents reassignment, NOT mutation | Can change properties, cannot reassign variable |
+| **JSON vs Object** | JSON keys must be in double quotes; JS object keys don't need quotes | `{"name":"x"}` vs `{name:"x"}` |
+
+### Run Commands
+
+```bash
+node chapter_16_Objects/131_Objects.js
+node chapter_16_Objects/132_Object_Person.js
+node chapter_16_Objects/133_callref_callbyValue.js
+node chapter_16_Objects/135_Objectexample.js
+node chapter_16_Objects/136_Object.js
+node chapter_16_Objects/137_Object2.js
+node chapter_16_Objects/138_ObjectExample2.js
+node chapter_16_Objects/139_Object_config.js
 ```
 
 ---
@@ -856,6 +936,7 @@ node chapter_15_Strings/126_String_searching.js
 | `07_functionsNote.txt` | Functions basics — definition vs calling, parameter vs argument |
 | `08_Hoisting_let_var_const.md` | **NEW!** Hoisting comparison table — `var` vs `let` vs `const` (hoisted, TDZ, scope, reassign, redeclare) |
 | `09_Hoisting_complete_Guide.md` | **NEW!** Complete hoisting guide — definition, JS engine phases (Memory Creation → Execution), `var`/`let`/`const` hoisting, function hoisting, class hoisting, TDZ, interview questions |
+| `10_Object_Master_class.md` | **NEW!** Complete Objects master class — 20 sections covering basic syntax, dot/bracket notation, nested objects, arrays in objects, array of objects, methods, `this` keyword, arrow vs regular functions, `const` mutation, `Object.freeze`/`seal`, destructuring, spread operator, reference vs value, shallow/deep copy, interview questions |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
@@ -909,7 +990,11 @@ Copy this prompt and use it with your AI assistant:
         │
 13. Function Closure ───────► Scope, closure basics, closure remembers state, real-world retry tracker & rate limiter
         │
-14. Playwright 3x ──────────► (Coming next!)
+14. Strings ────────────────► String methods, substring extraction, replace/replaceAll, split/join, conversion, cheatsheet
+        │
+15. Objects ────────────────► Object basics, dot/bracket notation, reference vs value, methods, config objects, JSON vs object
+        │
+16. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
