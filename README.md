@@ -24,6 +24,7 @@
 | 14 | [Function Closure](#chapter-14-function-closure) | Scope of functions, closure basics, closure remembers, real-world closure (retry tracker, rate limiter) |
 | 15 | [Strings](#chapter-15-strings) | String basics, string methods, searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()`, **substring extraction, case conversion, replace/replaceAll, split/join, string conversion, string cheatsheet** |
 | 16 | [Objects](#chapter-16-objects) | Object basics, dot/bracket notation, reference vs value, config objects, methods, nested properties, JSON vs object syntax |
+| 17 | [Multi-Dimensions Array](#chapter-17-multi-dimensions-array) | 2D arrays, nested iteration, matrix operations, pattern building (right-angle, left-angle, pyramid) |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -950,6 +951,42 @@ Copy this prompt and use it with your AI assistant:
 
 ---
 
+## Chapter 17: Multi-Dimensions Array
+
+**Folder:** `chapter_17_Multi_Dimensions_Arrary/`
+
+| File | Description |
+|------|-------------|
+| `140_Array.js` | 2D array basics — creation, nested `for` loop iteration, grid traversal with `process.stdout.write()` |
+| `141_Array_2.js` | 2D array access — indexing, updating elements, row/column length, last element access, real-world test matrix example |
+| `142_Array_functions.js` | 2D array operations — `map()` + `reduce()` for row-wise sums, real-world suite results with fail detection |
+| `143_rightanglepattern.js` | Right-angle triangle pattern — nested loops building `*` in increasing order |
+| `144_leftpattern.js` | Left-angle (reverse) triangle pattern — nested loops building `*` in decreasing order |
+| `145_Pyramidpattern.js` | Pyramid pattern — spaces + stars using `2*i - 1` formula for centered output |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **2D Array** | Array of arrays — matrix-like structure with rows and columns | `let grid = [[1,2,3],[4,5,6]]` |
+| **Nested Iteration** | Outer loop for rows, inner loop for columns | `for(i){ for(j){ grid[i][j] } }` |
+| **Row/Column Length** | `grid.length` = rows, `grid[0].length` = columns | Used for dynamic traversal |
+| **Pattern Building** | Using nested loops to print geometric patterns | Right-angle, left-angle, pyramid |
+| **Real-world Matrix** | Test results, scores, suite outcomes as 2D arrays | `[["Login","pass",200], ...]` |
+
+### Run Commands
+
+```bash
+node chapter_17_Multi_Dimensions_Arrary/140_Array.js
+node chapter_17_Multi_Dimensions_Arrary/141_Array_2.js
+node chapter_17_Multi_Dimensions_Arrary/142_Array_functions.js
+node chapter_17_Multi_Dimensions_Arrary/143_rightanglepattern.js
+node chapter_17_Multi_Dimensions_Arrary/144_leftpattern.js
+node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
+```
+
+---
+
 ## 🗺️ RoadMap
 
 **Folder:** `RoadMap/`
@@ -994,7 +1031,9 @@ Copy this prompt and use it with your AI assistant:
         │
 15. Objects ────────────────► Object basics, dot/bracket notation, reference vs value, methods, config objects, JSON vs object
         │
-16. Playwright 3x ──────────► (Coming next!)
+16. Multi-Dimensions Array ──► 2D arrays, nested iteration, matrix operations, pattern building
+        │
+17. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
