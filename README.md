@@ -25,7 +25,10 @@
 | 15 | [Strings](#chapter-15-strings) | String basics, string methods, searching with `includes()`, `startsWith()`, `endsWith()`, `indexOf()`, `lastIndexOf()`, **substring extraction, case conversion, replace/replaceAll, split/join, string conversion, string cheatsheet** |
 | 16 | [Objects](#chapter-16-objects) | Object basics, dot/bracket notation, reference vs value, config objects, methods, nested properties, JSON vs object syntax |
 | 17 | [Multi-Dimensions Array](#chapter-17-multi-dimensions-array) | 2D arrays, nested iteration, matrix operations, pattern building (right-angle, left-angle, pyramid) |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class** |
+| 18 | [Callback Concept](#chapter-18-callback-concept) | Sync/Async callbacks, forEach, callback hell, pyramid of DOM, real-world E2E flow |
+| 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
+| 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
 ---
@@ -921,6 +924,180 @@ node chapter_16_Objects/139_Object_config.js
 
 ---
 
+## Chapter 18: Callback Concept
+
+**Folder:** `chapter_18_CallbackConcept/`
+
+| File | Description |
+|------|-------------|
+| `146_callback.js` | **Callback basics** — `placeOrder` with 3 invocation styles: named function, anonymous function, arrow function |
+| `147_callback.js` | **Callback patterns** — `test` function with named, anonymous, and arrow callback styles |
+| `148_callbacktest.js` | **Garima's story** — callback with arrow function, Playwright-style test syntax |
+| `149_Sync_Callback.js` | **Synchronous callback** — `forEach` with test results array (PASS/FAIL) |
+| `150_foreach.js` | **forEach with callback** — iterating fruits array with anonymous function |
+| `151_forEach_1.js` | **forEach with names** — iterating names array with arrow and anonymous functions |
+| `152_forEach_PrintNumbers.js` | **forEach with numbers** — printing numbers with index using anonymous function |
+| `153_Async_callback.js` | **Asynchronous callback** — `setTimeout` simulating API response delay (5s) |
+| `154_CallbackHell.js` | **Callback Hell — E2E Login Flow** — nested callbacks for browser → login → credentials → click (real QA scenario: app.vwo.com) |
+| `155_Callback_RealHell.js` | **Real-world Callback Hell** — deeply nested `loginUser → getUserProfile → getUserOrders → getOrderDetails` pyramid |
+| `156_Call_Return.js` | **Callback with return** — `calculate(a,b,operation)` returning result from callback |
+| `157_Pyramid_DOM.js` | **Pyramid of DOM** — nested step1→step2→step3→step4 callbacks forming a pyramid structure |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **Callback** | A function passed as an argument to another function | `placeOrder("Burger", print)` |
+| **Named Callback** | Pre-defined function passed by reference | `placeOrder("Burger", print)` |
+| **Anonymous Callback** | Inline function without a name | `placeOrder("Burger", function(){...})` |
+| **Arrow Callback** | Concise arrow function syntax | `placeOrder("Burger", () => {...})` |
+| **Synchronous Callback** | Executes immediately within the outer function | `forEach`, `calculate` |
+| **Asynchronous Callback** | Executes later (e.g., after `setTimeout`) | `setTimeout(() => {...}, 5000)` |
+| **Callback Hell** | Deeply nested callbacks forming a pyramid structure | E2E login flow with 5+ nested levels |
+| **Pyramid of DOM** | Callback nesting that grows rightward and downward | `step1(→ step2(→ step3(→ step4(...))))` |
+
+### Callback Hell vs Clean Code
+
+```
+Callback Hell (Nested)                    Clean Code (Flat)
+─────────────────────                     ─────────────────
+loginUser(                                function handleLogin() {
+  → getUserProfile(                         loginUser(email, pwd, handleLogin);
+    → getUserOrders(                      }
+      → getOrderDetails(                  function handleProfile(profile) {
+        → ...                               getUserOrders(user.id, handleOrders);
+      }                                   }
+    })                                    ...
+  })
+```
+
+### Run Commands
+
+```bash
+node chapter_18_CallbackConcept/146_callback.js
+node chapter_18_CallbackConcept/147_callback.js
+node chapter_18_CallbackConcept/148_callbacktest.js
+node chapter_18_CallbackConcept/149_Sync_Callback.js
+node chapter_18_CallbackConcept/150_foreach.js
+node chapter_18_CallbackConcept/151_forEach_1.js
+node chapter_18_CallbackConcept/152_forEach_PrintNumbers.js
+node chapter_18_CallbackConcept/153_Async_callback.js
+node chapter_18_CallbackConcept/154_CallbackHell.js
+node chapter_18_CallbackConcept/155_Callback_RealHell.js
+node chapter_18_CallbackConcept/156_Call_Return.js
+node chapter_18_CallbackConcept/157_Pyramid_DOM.js
+```
+
+---
+
+## Chapter 19: Promise Concept
+
+**Folder:** `chapter_19_promiseconcept/`
+
+| File | Description |
+|------|-------------|
+| `158_Promise.js` | **Promise basics** — `new Promise()` with `resolve`/`reject`, food order example |
+| `159_REAL_Promise_API.js` | **Real Promise API** — API call resolving with `{status, body}`, `.then()` consumption |
+| `160_REAL_Promise_API.js` | **Promise rejection** — API call rejecting with `"500 Internal server error"`, `.catch()` handling |
+| `161_Promise_Finally.js` | **Promise finally** — `.finally()` always executes regardless of resolve or reject |
+| `162_Promise_REAL.js` | **Real-world promise chain** — E2E browser login flow: openBrowser → goToLogin → enterCredentials → clickLogin |
+| `163_Promise_All.js` | **Promise.all** — parallel auth/DB/cache checks, fails fast on first rejection |
+| `164_Promise_Settle.js` | **Promise.allSettled** — test report pattern: get results for ALL tests, not just first failure |
+| `165_Promise_race.js` | **Promise.race** — fast server (100ms) vs slow server (500ms), returns first settled |
+| `166_Promise_IQ.js` | **Promise IQ** — resolve/reject basics, chaining with `return val * 10`, `Promise.resolve()`/`Promise.reject()` shortcuts |
+| `167_Promise_IQ2.js` | **Promise IQ 2** — `Promise.all` with PASS/FAIL tests, `Promise.allSettled` with API status codes |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **Promise** | Object representing eventual completion/failure of async operation | `new Promise((resolve, reject) => {...})` |
+| **Pending** | Initial state — neither fulfilled nor rejected | `console.log(order)` shows `Promise { <pending> }` |
+| **Resolved / Fulfilled** | Operation completed successfully | `resolve({status: 200, body: "User Data"})` |
+| **Rejected** | Operation failed | `reject("500 Internal server error")` |
+| **`.then()`** | Handles resolved value | `apiCall.then(data => {...})` |
+| **`.catch()`** | Handles rejection/error | `apiCall.catch(error => {...})` |
+| **`.finally()`** | Always executes (cleanup) | `.finally(() => console.log("Done"))` |
+| **Promise.all()** | Waits for ALL promises — fails fast if any rejects | `Promise.all([auth, db, cache])` |
+| **Promise.allSettled()** | Waits for ALL — returns results regardless of reject | `Promise.allSettled([...])` — test report pattern |
+| **Promise.race()** | Returns the first settled promise (resolve or reject) | `Promise.race([fastServer, slowServer])` |
+| **Promise Chaining** | Sequential async operations via `.then()` return | `openBrowser().then(() => goToLogin()).then(...)` |
+
+### Promise Combinators
+
+| Method | Behavior | Use Case |
+|--------|----------|----------|
+| `Promise.all()` | Fails fast — rejects if ANY promise rejects | All checks must pass |
+| `Promise.allSettled()` | Waits for all — returns `{status, value/reason}` for each | Test reports, batch results |
+| `Promise.race()` | Returns first settled promise (resolve or reject) | Timeout race, fastest server |
+
+### Run Commands
+
+```bash
+node chapter_19_promiseconcept/158_Promise.js
+node chapter_19_promiseconcept/159_REAL_Promise_API.js
+node chapter_19_promiseconcept/160_REAL_Promise_API.js
+node chapter_19_promiseconcept/161_Promise_Finally.js
+node chapter_19_promiseconcept/162_Promise_REAL.js
+node chapter_19_promiseconcept/163_Promise_All.js
+node chapter_19_promiseconcept/164_Promise_Settle.js
+node chapter_19_promiseconcept/165_Promise_race.js
+node chapter_19_promiseconcept/166_Promise_IQ.js
+node chapter_19_promiseconcept/167_Promise_IQ2.js
+```
+
+---
+
+## Chapter 20: Async and Await
+
+**Folder:** `chapter_20_asyncandAwait/`
+
+| File | Description |
+|------|-------------|
+| `168_async.js` | **async/await basics** — `getToken` → `getUser` chaining, `.then()` vs `async/await` comparison |
+| `169_BetterWay.js` | **Better Way — async/await** — E2E login flow with `async function` + `await`, cleaner than promise chaining |
+
+### Key Concepts
+
+| Concept | Description | Example |
+|---------|-------------|---------|
+| **`async` function** | Declares a function that returns a Promise | `async function run() { ... }` |
+| **`await`** | Pauses execution until the Promise settles | `let token = await getToken()` |
+| **Promise Chaining vs async/await** | async/await is cleaner, more readable, avoids `.then()` nesting | See `169_BetterWay.js` |
+
+### Promise Chaining vs async/await
+
+```javascript
+// Promise Chaining (.then())
+openBrowser()
+    .then(msg1 => { console.log(msg1); return goToLogin(); })
+    .then(msg2 => { console.log(msg2); return enterCredentials(); })
+    .then(msg3 => { console.log(msg3); return clickLogin(); })
+    .then(msg4 => { console.log(msg4); });
+
+// async/await (Cleaner)
+async function runLoginFlow() {
+    let msg1 = await openBrowser();
+    console.log("Step 1: ", msg1);
+    let msg2 = await goToLogin();
+    console.log("Step 2: ", msg2);
+    let msg3 = await enterCredentials();
+    console.log("Step 3: ", msg3);
+    let msg4 = await clickLogin();
+    console.log("Step 4: ", msg4);
+}
+runLoginFlow();
+```
+
+### Run Commands
+
+```bash
+node chapter_20_asyncandAwait/168_async.js
+node chapter_20_asyncandAwait/169_BetterWay.js
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -942,6 +1119,7 @@ node chapter_16_Objects/139_Object_config.js
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
 | `Arrays_Natural_vs_Proper_Sorting.md` | **NEW!** Natural sorting (default) vs proper sorting with `a-b` / `b-a` — comparison table, step-by-step walkthrough, pipeline diagram |
+| `OverAll_Master_Notes_PlayWrite.docx` | Overall master notes covering Playwright concepts — comprehensive reference document |
 
 ### How to Add New IQ Notes
 
@@ -1033,7 +1211,13 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 16. Multi-Dimensions Array ──► 2D arrays, nested iteration, matrix operations, pattern building
         │
-17. Playwright 3x ──────────► (Coming next!)
+17. Callback Concept ───────► Sync/Async callbacks, forEach, callback hell, pyramid of DOM
+        │
+18. Promise Concept ────────► Promise creation, .then/.catch/.finally, Promise.all/allSettled/race
+        │
+19. Async and Await ────────► async/await syntax, promise chaining vs async/await, real-world login flow
+        │
+20. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
