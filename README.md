@@ -28,7 +28,8 @@
 | 18 | [Callback Concept](#chapter-18-callback-concept) | Sync/Async callbacks, forEach, callback hell, pyramid of DOM, real-world E2E flow |
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes** |
+| 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
 ---
@@ -1098,6 +1099,49 @@ node chapter_20_asyncandAwait/169_BetterWay.js
 
 ---
 
+## Chapter 21: Debug
+
+**Folder:** `chapter_21_Debug/`
+
+| File | Description |
+|------|-------------|
+| `index.html` | HTML page with embedded `<script src="index.js">` — browser debugging setup |
+| `index.js` | JavaScript execution context demo — `var x = 1`, function `a()` (x=10), function `b()` (x=100), logs `x` at global scope |
+| `index1.js` | Hoisting demo — `var x = 7`, function `getName()` logs "Namaste JavaScript", calling `getName()` before and after declaration |
+
+### Key Concepts
+
+| Concept | Description | File |
+|---------|-------------|------|
+| **Execution Context** | Global Execution Context (GEC) created first, then new EC for each function call | `index.js` |
+| **Call Stack** | Functions pushed onto call stack: `a()` → `b()` → pop, each with its own `x` | `index.js` |
+| **Hoisting in Action** | `var x` hoisted with `undefined`, function `getName()` hoisted with full body | `index1.js` |
+
+### Execution Flow (index.js)
+
+```
+Global Execution Context created
+  │
+  ├── Memory Phase: x = undefined, a = fn, b = fn
+  │
+  ├── Execution Phase:
+  │     ├── x = 1
+  │     ├── a() called → New EC for a() → x = 10 → console.log(10) → pop
+  │     ├── b() called → New EC for b() → x = 100 → console.log(100) → pop
+  │     └── console.log(x) → 1 (global x)
+```
+
+### Run Commands
+
+```bash
+# Open index.html in browser and check Console (F12)
+# Or run with Node:
+node chapter_21_Debug/index.js
+node chapter_21_Debug/index1.js
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -1120,6 +1164,9 @@ node chapter_20_asyncandAwait/169_BetterWay.js
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
 | `Arrays_Natural_vs_Proper_Sorting.md` | **NEW!** Natural sorting (default) vs proper sorting with `a-b` / `b-a` — comparison table, step-by-step walkthrough, pipeline diagram |
 | `OverAll_Master_Notes_PlayWrite.docx` | Overall master notes covering Playwright concepts — comprehensive reference document |
+| `JavascriptNotes/000_Javascriptexecutionunderstaing.txt` | JavaScript execution context deep-dive — Global Execution Context (Memory + Code components), call stack, synchronous single-threaded nature, step-by-step walkthrough of `square()` function execution |
+| `JavascriptNotes/ExecutionContextInJavaScript.png` | Visual diagram: Execution Context structure — Memory (Variable Environment) and Code (Thread of Execution) components |
+| `JavascriptNotes/JavaScriptCodeExecutionFlowInExecutionContext.png` | Visual diagram: JavaScript code execution flow inside Execution Context — memory creation phase followed by code execution phase |
 
 ### How to Add New IQ Notes
 
@@ -1217,7 +1264,9 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 19. Async and Await ────────► async/await syntax, promise chaining vs async/await, real-world login flow
         │
-20. Playwright 3x ──────────► (Coming next!)
+20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action
+        │
+21. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```

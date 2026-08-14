@@ -1,0 +1,63 @@
+
+1. Before executing the Javascript program javascript will internally create Global Execution Context in 
+Call Stack 
+2. Execution context contains Memory and Code
+
+Important Notes:
+JavaScript Episode 1
+====================
+Every thing in Javascript happens inside an Execution Context
+
+You can assume this Execution context as container or big box in which whole JavaScript code is executed
+
+Execution Context is like big box and it has 2 components in it 
+
+1. Memory component - This is the place where all the variable and functions are stored as key value pair
+    There is also heavy word for this memory component is called Variabld environment
+
+    Example:
+    key : value
+    a : 10
+    fn : {}
+
+2. Code Component : This is place where code is execute one line at a time 
+                    Just like Memory componet there is also heavy word for this code component is called Thread of Execution
+
+
+JavaScript is synchronous Single-threaded language:
+
+when i say single threaded means at time JavaScript will one line at a time
+synchronous single threaded means one command at a time in a specific order
+that means it will go to next line once current line has been finished Execution that means synchronous 
+single threaded language
+
+And Trust me these things really very Important and no body teachs them but I here on mission to make you fall in 
+love with JavaScript and don't worry continue along with me and we will be covering Every thing in deep
+
+You can refer the Execution Context in ExecutionContext.png
+
+===============================================================
+
+JavaScript Episode 2:
+====================
+
+Do you know when you run JavaScript Program there are lot of things happens behinds sceens inside the JavaScript engine
+Will be convering thing right now just keepwatching 
+
+JavaScript is not possible with out these beautiful Execution context
+
+What happens when you run javascript program, yes you are wright Execution Context is created
+
+so let now see how this beautiful Execution Context is created with help of JavaScript program
+
+Example Program 
+===============
+var n = 2;
+function square(num){
+    var ans = num * num;
+    return ans;
+}
+
+var square2 = square(n);
+var square4 = square(4);
+
