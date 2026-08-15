@@ -208,5 +208,61 @@ Now comes part of Phase2 - Code Execution
 
     again New ExecutionContext will have 2 phases 
 
-    And the whole process will repeate for the same
- 
+    And the whole process will repeate for the same and return value as 16
+
+    =============================================================================
+
+    Don't you think all  this is too much to manage to JavaScript engine like 
+    ExecutionContext created inside then again one more ExecutionContext inside Code Component
+    and soon creation and deletion all these things are tough  to manage right 
+
+    and suppose there Multiple function calling side it can go any deep level function invokation 
+    it is very difficult to manage and it does it very beautiful
+
+    And it handles every thing creation and deletion of the ExecutionContext and the control
+
+    This is  known as CallStack 
+
+    what is callstack is like Stack 
+
+    Every time in the bottom of stack we have GloabExecutionContext that mean's when
+    ever any JavaScript program is run this callstack will be populated with this GloabExecutionContext 
+
+    Whole execution context is pushed in side the stack and when ever new function  invoked or new ExecutionContext is created
+    and this ExecutionContext is put side the stack 
+
+
+    let me just denote ExecutionContext as E1 which sit on top of the GloabExecutionContext in side CallStack
+
+    Once E1 excution is completd now this E1 is deleted or poped out of the stack and control goes back to 
+
+    var square2 = square(n); this line
+
+    and then we will be moved next line 
+
+    new ExecutionContext will be created for the function invokation and E2 will be placed on top of GloabExecutionContext
+
+    once the Execution of the E2 is completed and it will be removed or poped out of the stack return back to caller
+
+    or GloabExecutionContext 
+
+    And this CallStack only for managing these ExecutionContext
+
+Once enter program exeuction is completed this GloabExecutionContext also is gone from CallStack and CallStack is empty 
+
+And that is how whole code in side JavaScript Engine executed 
+
+Note:
+====
+Call Stack maintains the order of execution of ExecutionContext
+
+Now callStack is known very fancy names 
+
+CallStack
+ExecutionContextStack
+Program Stack
+Control Stack
+Runtime Stack
+Machine Stack
+
+All above various names are used for this CallStack

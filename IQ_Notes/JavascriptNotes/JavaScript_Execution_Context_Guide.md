@@ -186,39 +186,76 @@ Line 7, `var square4 = square(4);`, triggers the **exact same process** — only
 
 ---
 
-## 9. Call Stack Visualization
+## 9. The Call Stack
 
-The Call Stack keeps track of which Execution Context is currently running. It follows **LIFO (Last In, First Out)** order — the most recently created context is popped off first.
+### 9.1 Why Do We Need a Call Stack?
+
+Managing all this creation and deletion of Execution Contexts is a lot for the JavaScript engine to handle — especially when there are **multiple function calls**, possibly nested many levels deep. JavaScript needs a reliable, systematic way to track:
+
+- Which Execution Context is currently running
+- Where to return control once an Execution Context finishes
+
+This is exactly what the **Call Stack** manages — the creation, execution, and deletion of every Execution Context, in the correct order.
+
+### 9.2 What Is the Call Stack?
+
+The Call Stack behaves exactly like a **Stack data structure** — **LIFO (Last In, First Out)**.
+
+- The **Global Execution Context (GEC)** always sits at the **bottom** of the stack — it's pushed the moment any JavaScript program starts running.
+- Every time a function is **invoked**, a new Execution Context is created and **pushed** on top of the stack.
+- Once that Execution Context **finishes running**, it is **popped off** the stack, and control returns to whoever called it.
+- Once the **entire program finishes**, the GEC itself is popped off, and the Call Stack becomes **empty**.
+
+Let's label the Execution Context created for `square(n)` as **E1**, and the one created for `square(4)` as **E2**:
 
 ```mermaid
 flowchart TB
-    subgraph S1["Step 1: Program starts"]
+    subgraph Push1["① square n invoked"]
         direction TB
-        G1["Global Execution Context"]
+        E1a["E1: square(n) Execution Context"] --> GEC1a["Global Execution Context"]
+    end
+    subgraph Pop1["② E1 finishes → popped"]
+        direction TB
+        GEC1b["Global Execution Context"]
+    end
+    subgraph Push2["③ square 4 invoked"]
+        direction TB
+        E2a["E2: square(4) Execution Context"] --> GEC2a["Global Execution Context"]
+    end
+    subgraph Pop2["④ E2 finishes → popped"]
+        direction TB
+        GEC2b["Global Execution Context"]
+    end
+    subgraph Done["⑤ Program finishes → GEC popped"]
+        direction TB
+        Empty["Call Stack: empty"]
     end
 
-    subgraph S2["Step 2: square(n) is invoked"]
-        direction TB
-        F2["square(n) Execution Context"] --> G2["Global Execution Context"]
-    end
-
-    subgraph S3["Step 3: square(n) returns → popped"]
-        direction TB
-        G3["Global Execution Context"]
-    end
-
-    subgraph S4["Step 4: square(4) is invoked"]
-        direction TB
-        F4["square(4) Execution Context"] --> G4["Global Execution Context"]
-    end
-
-    subgraph S5["Step 5: square(4) returns → popped, program ends"]
-        direction TB
-        G5["Global Execution Context"]
-    end
-
-    S1 --> S2 --> S3 --> S4 --> S5
+    Push1 --> Pop1 --> Push2 --> Pop2 --> Done
 ```
+
+Step by step:
+
+1. `square(n)` is invoked → **E1** is pushed on top of the GEC.
+2. E1 finishes executing (hits `return`) → it's **popped off**, and control returns to the line `var square2 = square(n);`.
+3. Execution moves to the next line → `square(4)` is invoked → **E2** is pushed on top of the GEC.
+4. E2 finishes executing → it's **popped off**, control returns to the caller.
+5. The entire program finishes running → the **GEC itself is popped off** → Call Stack is **empty**.
+
+> 📌 **Key Rule:** The Call Stack maintains the *order of execution* of Execution Contexts.
+
+### 9.3 Other Names for the Call Stack
+
+You'll see the Call Stack referred to by several different names across books, docs, and talks — they all mean the same thing:
+
+| Alternate Name |
+|---|
+| Call Stack |
+| Execution Context Stack |
+| Program Stack |
+| Control Stack |
+| Runtime Stack |
+| Machine Stack |
 
 ---
 
@@ -243,6 +280,8 @@ square4  : 16
 - Every **function invocation** (`functionName()`) creates a **brand-new Execution Context**, pushed onto the **Call Stack**.
 - The **`return`** keyword sends control (and a value) back to wherever the function was called from.
 - Once a function finishes, its Execution Context is **popped off the Call Stack** and deleted.
+- The **Call Stack** (LIFO) is what the JS engine uses to track and manage the creation/deletion of every Execution Context, in order — with the **GEC always at the bottom**, and it too is popped once the whole program finishes.
+- The Call Stack is also known as the **Execution Context Stack, Program Stack, Control Stack, Runtime Stack,** or **Machine Stack**.
 
 ---
 
