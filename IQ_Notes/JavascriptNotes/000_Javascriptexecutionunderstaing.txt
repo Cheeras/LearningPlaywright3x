@@ -61,3 +61,152 @@ function square(num){
 var square2 = square(n);
 var square4 = square(4);
 
+Now let us see how this javascript code runs behind the sceensm, when you run whole code 
+Global Execution Context is created and it like big box which has 2 component 
+one is Memory component and Code Component, Now Listet to very care full Now ExecutionContext is created
+in two phase first phase is called Memory Creation phase after words Code Execution phase
+
+Let us first see the first see how this phase is done
+==============================
+Phase 1: Memory Creation Phase
+==============================
+If we have this code(above code) in first phase of Memory Creation Javascript will allocate memory for all the variables and functions in side
+Memory component 
+
+Step 1:
+so as soon as JavaScript encouters the line var n = 2; it allocate memory to next
+as n: 
+
+Step 2:
+similary javascript will goto  next line , we have function it will allocate memory to square function 
+square:
+
+Step 3:
+Now let me you what does it stores when it allocates memory to n it store special value which is known as undefined
+
+n: undefined
+
+Step 4:
+and incase of functions,how it will allocate memory to function, literally it will copy entire code into Memory component and 
+create memory for that function
+
+square: fn {...}
+
+Step 5: Now it will also allocate memory to square2 and square4 as they are another variables so it will again store undefined for them
+
+square2: undefined
+square4: undefined
+
+===============================================================================================================
+Now let us see what happened in phase 2 i.e Code Execution phase
+
+==============================
+Phase 2 : Code Execution Phase
+==============================
+Let's see how code is exeucted after the memory allocation, Now JavaScript once again runs through whole JavaScript program line by line and it 
+execute the code now this is the point when all these functions and every calculation in the program is done
+
+As soon it encouters this first line var n = 2; it actually places the 2 inside the n
+
+till now the value of n is undefined but in the second phase of Code Execution context i.e is Code Execution phase 
+this 2 value of n is now being placed actually in this place holder or identifier n 
+
+n: remove undefined and place 2
+
+
+after finishing line 1 it goes to line 2 and sees that we have nothing to do here so line number 2 to 5 nothing to execute literally because
+it is function definition
+
+then it will go to next line  line 6 is most amazing part here function invokation or calling of the function 
+what do you mean by function invokation when you see function name with these paranthesis with these round brackets - it means that 
+now function now been called for execution 
+
+functions are the heart of JavaScript, and you know they behave very differntly in JavaScript than any other programing language okay
+
+functions are Here like Mini program and when function is invoked and Mini program is invoked and all to gether new Execution Context is 
+Created in side the Code Component 
+
+***************************************Important**************************************************
+Remember whole thing what ever running this whole program was inside the Global Exeuction Context
+**************************************************************************************************
+Now when run/call/invoke a function brand new Execution context is created let us see this is gona be interesting
+Just keep following 
+
+
+So here Brand new ExecutionContext is created in side code Component of the GloabExecutionContext Please refer the JavaScriptCodeExecutionFlowInExecutionContext-Full Detailed.png for more details 
+in the same folder
+
+Now let us see new ExecutionContext is having Memory and code components now again be 2 phases 
+
+1. Memory Creation Phase 
+2. Code Execution 
+
+first phase is Memory Creation Phase 
+Now are talking about only following function invokation and we will be concered about this piece of code only when we are exeuting square(n)
+
+function square(num){
+    var ans = num * num;
+    return ans;
+}
+
+
+In Phase one don't forget Memory is being allocated for variables and functions in side Memory Component it involves parameters num 
+and other variable
+
+we will be allocating memory for num and ans here in this case
+
+Memory
+
+num: undefined
+
+ans: undefined
+
+Remember what will be stored during the memory allocation phase yes you are write it is undefined 
+
+
+Now comes part of Phase2 - Code Execution
+=========================================
+  In this we will executing each line, what happens when we execute this code when this function is invoked the value of n is passed to num 
+  of square function 
+
+  that means num: 2 , num is called parameter and n is called the argument
+
+  value of n is 2 right now
+
+  the code will moved to next line 
+
+  in this line it will exeucte the calculation 
+   
+   num * num and put the result value into ans
+
+   its like this it it is executing the code inside the code block of the function specific ExecutionContext
+
+   num * num = 2 * 2 = 4 will be replaced by undefined for the ans and ans now become 4
+
+   ans : 4
+
+   in the next line we have encoutered special keyword called return so when ever you will see return ans this return keyword tell this
+    function that you are done with work now just return the whole control back to ExecutionContext where the function was invoked
+
+    Remember this is very Important return keyword says that return the control of the program to  the place where the function was
+    invoked
+
+    where the function was invoked
+
+    var square2 = square2(n);// it will return to here now the control goes here
+
+    How it happens as soon as return ans;
+
+    it find the value of ans in local Memory and it has 4 and this return ans control back to the 
+
+    square2 = replaceing the undefined with 4 
+
+    Once the function exeuction is completed the whole ExecutionContext of the function will be deleted from the CallStack 
+
+    in the next line we are again invoking square(4) only change in the argument again branch new ExecutionContext will be created 
+    for this function invokation
+
+    again New ExecutionContext will have 2 phases 
+
+    And the whole process will repeate for the same
+ 

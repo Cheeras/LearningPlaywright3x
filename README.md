@@ -1167,6 +1167,9 @@ node chapter_21_Debug/index1.js
 | `JavascriptNotes/000_Javascriptexecutionunderstaing.txt` | JavaScript execution context deep-dive — Global Execution Context (Memory + Code components), call stack, synchronous single-threaded nature, step-by-step walkthrough of `square()` function execution |
 | `JavascriptNotes/ExecutionContextInJavaScript.png` | Visual diagram: Execution Context structure — Memory (Variable Environment) and Code (Thread of Execution) components |
 | `JavascriptNotes/JavaScriptCodeExecutionFlowInExecutionContext.png` | Visual diagram: JavaScript code execution flow inside Execution Context — memory creation phase followed by code execution phase |
+| `JavascriptNotes/JavaScriptCodeExecutionFlowInExecutionContext-Full Detailed.png` | **NEW!** Full detailed diagram: JavaScript code execution flow inside Execution Context — comprehensive visual with memory creation and code execution phases |
+| `JavascriptNotes/JavaScript_Execution_Context_Guide.md` | **NEW!** Complete JavaScript Execution Context guide — what is EC, two components (Memory + Code), synchronous single-threaded nature, call stack, two-phase execution (Memory Creation + Code Execution), step-by-step walkthrough with `square()` example, Mermaid diagrams |
+| `JavascriptNotes/JavaScript_Execution_Context_Notes.md` | **NEW!** JavaScript Execution Context notes — structured guide covering Episode 1 (EC overview, two components, synchronous single-threaded) and Episode 2 (GEC creation, call stack, two-phase execution: Memory Creation Phase + Code Execution Phase, `undefined` vs not defined) |
 
 ### How to Add New IQ Notes
 
