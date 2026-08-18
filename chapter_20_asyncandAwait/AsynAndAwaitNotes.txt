@@ -1,0 +1,477 @@
+Deep Dive into async and await in Javascript
+===========================================
+    async and await are used in JavaScript to handle asynchronous operations in cleaner and easiest way
+
+    The most common asynchronous operations are API calls, database Calls, reading files, timers, and broswer automation actions
+
+Problem statement:
+================
+
+Suppose you are testing login flow1
+
+    openBrowser();
+    gotoLoginPage();
+    enterCredentials();
+    clickLogin();
+
+it looks like these steps will happen one after another but imagine gotoLoginPage() takes 3 seconds to load
+
+JavaScript normally does not want to block the entire program while waiting for slow operations, So asynchronous Programming allows
+other work to continue while waiting 
+
+for Example
+
+console.log("start");
+
+setTimeOut(() =>{
+    console.log("broswer opened");
+},2000);
+
+console.log("End");
+
+Why?
+
+Because setTimeout() is asynchronous. JavaScript doesn't wait 2 seconds there. It registers the task and continues executing.
+
+=============================
+2. What is async?
+
+async is written before a function.
+
+Syntax:
+
+async function test() {
+
+
+}
+
+Example:
+
+async function login() {
+    console.log("Login started");
+}
+
+The important point is:
+
+An async function always returns a Promise.
+
+For example:
+
+async function getName() {
+    return "Shankar";
+}
+
+
+console.log(getName());
+
+You don't directly get:
+
+Shankar
+
+You get something similar to:
+
+Promise { 'Shankar' }
+
+Because JavaScript internally converts this:
+
+async function getName() {
+    return "Shankar";
+}
+
+roughly into:
+
+function getName() {
+    return Promise.resolve("Shankar");
+}
+
+So remember:
+
+async function
+      ↓
+always returns
+      ↓
+Promise
+
+==============================
+3. What is await?
+
+await means:
+
+Wait until this Promise finishes, then continue with the next line inside this async function.
+
+Example:
+
+async function test() {
+
+
+    let result = await somePromise;
+
+
+    console.log(result);
+}
+
+Here JavaScript waits for somePromise to resolve before assigning its resul
+
+=========================
+4. Why do we need async before using await?
+
+Consider:
+
+function test() {
+
+
+    let result = await somePromise;
+
+
+}
+
+This is normally invalid.
+
+You'll get an error similar to:
+
+SyntaxError: await is only valid in async functions
+
+So we declare:
+
+async function test() {
+
+
+    let result = await somePromise;
+
+
+}
+
+Think of it like this:
+
+async
+↓
+tells JavaScript
+
+
+"This function contains asynchronous work
+and may use await."
+
+Then:
+
+await
+↓
+tells JavaScript
+
+
+"Don't continue to the next line of this function
+until this Promise is completed."
+============
+Simple real-time example
+
+Let's create a fake browser operation.
+
+function openBrowser() {
+
+
+    return new Promise((resolve) => {
+
+
+        setTimeout(() => {
+            console.log("Browser opened");
+            resolve();
+        }, 2000);
+
+
+    });
+
+
+}
+
+Now suppose we write:
+
+openBrowser();
+
+
+console.log("Navigate to login page");
+
+Output:
+
+Navigate to login page
+Browser opened
+
+This is wrong for our expected test flow.
+
+We wanted:
+
+Browser opened
+Navigate to login page
+
+That's where await helps.
+
+async function test() {
+
+
+    await openBrowser();
+
+
+    console.log("Navigate to login page");
+
+
+}
+
+
+test();
+
+Now output:
+
+Browser opened
+Navigate to login page
+6. What exactly happened?
+
+When JavaScript reaches:
+
+await openBrowser();
+
+openBrowser() returns a Promise.
+
+The Promise takes approximately 2 seconds to complete.
+
+So:
+
+test()
+   ↓
+await openBrowser()
+   ↓
+Promise pending
+   ↓
+wait
+   ↓
+Promise resolved
+   ↓
+continue
+   ↓
+console.log("Navigate to login page")
+===================================
+QA automation example
+
+This is especially important in Playwright.
+
+You might write:
+
+await page.goto("https://app.vwo.com");
+
+Why await?
+
+Because opening a webpage takes time.
+
+The browser has to:
+
+Send request
+    ↓
+Wait for server
+    ↓
+Receive HTML
+    ↓
+Load page
+    ↓
+Continue test
+
+Therefore Playwright APIs commonly return Promises.
+
+A typical test looks like:
+
+test("Login Test", async ({ page }) => {
+
+
+    await page.goto("https://app.vwo.com");
+
+
+    await page.fill("#login-username", "test@gmail.com");
+
+
+    await page.fill("#login-password", "password");
+
+
+    await page.click("#js-login-btn");
+
+
+});
+
+Notice both:
+
+async
+
+and:
+
+await
+
+are present.
+
+10. What happens if you remove async?
+
+Suppose:
+
+function loginTest() {
+
+
+    await page.goto("https://app.vwo.com");
+
+
+}
+
+You'll get a syntax error because await is being used inside a regular function.
+
+Correct:
+
+async function loginTest() {
+
+
+    await page.goto("https://app.vwo.com");
+
+
+}
+11. What happens if you keep async but remove await?
+
+Suppose:
+
+async function loginTest() {
+
+
+    page.goto("https://app.vwo.com");
+
+
+    page.fill("#username", "admin");
+
+
+}
+
+The problem is that page.goto() returns a Promise.
+
+But we aren't waiting for it.
+
+So JavaScript may start executing:
+
+page.fill()
+
+before navigation completes.
+
+That could produce failures such as:
+
+Element not found
+Page closed
+Navigation interrupted
+Timeout
+
+Correct:
+
+async function loginTest() {
+
+
+    await page.goto("https://app.vwo.com");
+
+
+    await page.fill("#username", "admin");
+
+
+}
+
+Now:
+
+Open page
+    ↓
+wait
+    ↓
+page loaded
+    ↓
+find username
+    ↓
+enter value
+12. async does NOT mean "wait"
+
+This is a common confusion.
+
+async itself does not wait.
+
+For example:
+
+async function test() {
+
+
+    console.log("Hello");
+
+
+}
+
+There is no waiting happening here.
+
+async mainly does two things:
+
+Makes the function return a Promise.
+Allows you to use await inside it.
+==================================
+Function declaration styles
+
+You can use async with normal functions:
+
+async function login() {
+
+
+}
+
+You can also use it with function expressions:
+
+const login = async function () {
+
+
+};
+
+And with arrow functions:
+
+const login = async () => {
+
+
+};
+
+Example:
+
+const login = async () => {
+
+
+    await openBrowser();
+
+
+    console.log("Browser ready");
+
+
+};
+
+All three allow await.
+===========================
+Very important summary
+Keyword	Purpose
+async	Declares that a function is asynchronous
+async	Makes the function return a Promise
+async	Allows await inside the function
+await	Waits for a Promise to settle
+await	Gives you the resolved result
+Without async	await usually can't be used inside that function
+Without await	JavaScript may continue before the async operation finishes
+
+The easiest formula to remember is:
+
+Promise
+   ↓
+async function
+   ↓
+await Promise
+   ↓
+get result
+   ↓
+continue next line
+
+For QA automation, think of it this way:
+
+await page.goto(url);
+await page.fill(locator, value);
+await page.click(locator);
+
+means:
+
+Complete this browser operation first, then move to the next test step.
+
+That is why async/await is extremely important when you start working with Playwright, API calls, Node.js, database operations, and modern JavaScript automation frameworks.

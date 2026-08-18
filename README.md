@@ -27,9 +27,9 @@
 | 17 | [Multi-Dimensions Array](#chapter-17-multi-dimensions-array) | 2D arrays, nested iteration, matrix operations, pattern building (right-angle, left-angle, pyramid) |
 | 18 | [Callback Concept](#chapter-18-callback-concept) | Sync/Async callbacks, forEach, callback hell, pyramid of DOM, real-world E2E flow |
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
-| 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow |
-| 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes** |
+| 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow, deep dive notes |
+| 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging, NaN self-reference test |
+| 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
 ---
@@ -1057,6 +1057,7 @@ node chapter_19_promiseconcept/167_Promise_IQ2.js
 |------|-------------|
 | `168_async.js` | **async/await basics** — `getToken` → `getUser` chaining, `.then()` vs `async/await` comparison |
 | `169_BetterWay.js` | **Better Way — async/await** — E2E login flow with `async function` + `await`, cleaner than promise chaining |
+| `AsynAndAwaitNotes.txt` | **Deep Dive Notes** — comprehensive async/await guide: why async programming, `async` always returns Promise, `await` waits for Promise, async required before await, real-time browser automation example, Playwright test pattern, common mistakes (missing async, missing await), function declaration styles, summary table |
 
 ### Key Concepts
 
@@ -1108,6 +1109,7 @@ node chapter_20_asyncandAwait/169_BetterWay.js
 | `index.html` | HTML page with embedded `<script src="index.js">` — browser debugging setup |
 | `index.js` | JavaScript execution context demo — `var x = 1`, function `a()` (x=10), function `b()` (x=100), logs `x` at global scope |
 | `index1.js` | Hoisting demo — `var x = 7`, function `getName()` logs "Namaste JavaScript", calling `getName()` before and after declaration |
+| `test.js` | Simple variable assignment test — `let count = count + 1` demonstrating `NaN` behavior with uninitialized self-reference |
 
 ### Key Concepts
 
@@ -1159,6 +1161,7 @@ node chapter_21_Debug/index1.js
 | `08_Hoisting_let_var_const.md` | **NEW!** Hoisting comparison table — `var` vs `let` vs `const` (hoisted, TDZ, scope, reassign, redeclare) |
 | `09_Hoisting_complete_Guide.md` | **NEW!** Complete hoisting guide — definition, JS engine phases (Memory Creation → Execution), `var`/`let`/`const` hoisting, function hoisting, class hoisting, TDZ, interview questions |
 | `10_Object_Master_class.md` | **NEW!** Complete Objects master class — 20 sections covering basic syntax, dot/bracket notation, nested objects, arrays in objects, array of objects, methods, `this` keyword, arrow vs regular functions, `const` mutation, `Object.freeze`/`seal`, destructuring, spread operator, reference vs value, shallow/deep copy, interview questions |
+| `11_asyn_await.md` | **NEW!** Deep Dive into `async` and `await` — why async programming, `setTimeout` example, `async` always returns Promise, `await` waits for Promise, async required before await, real-time browser automation example (openBrowser → gotoLogin → enterCredentials → clickLogin), Playwright test pattern, common mistakes (missing async, missing await), function declaration styles (normal, expression, arrow), summary table |
 | `Source_Code_ByteCODE_Binary_IQ.md` | Source code vs Bytecode vs Binary code explained with example |
 | `README.md` | Prompt template for generating new IQ note files |
 | `Array_Complete_Guide.md` | **NEW!** Complete Arrays master guide — creation, indexing, 20+ methods, real-time examples, Mermaid diagrams |
@@ -1265,9 +1268,9 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 18. Promise Concept ────────► Promise creation, .then/.catch/.finally, Promise.all/allSettled/race
         │
-19. Async and Await ────────► async/await syntax, promise chaining vs async/await, real-world login flow
+19. Async and Await ────────► async/await syntax, promise chaining vs async/await, real-world login flow, deep dive notes
         │
-20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action
+20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action, NaN self-reference test
         │
 21. Playwright 3x ──────────► (Coming next!)
         │
