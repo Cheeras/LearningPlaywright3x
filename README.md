@@ -28,7 +28,8 @@
 | 18 | [Callback Concept](#chapter-18-callback-concept) | Sync/Async callbacks, forEach, callback hell, pyramid of DOM, real-world E2E flow |
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow, deep dive notes |
-| 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging, NaN self-reference test |
+| 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -515,12 +516,23 @@ Backward Indexing:  -5   -4   -3   -2   -1
 | Q9 | `while` loop + `**` | Armstrong number check |
 | Q10 | `while` loop + reverse + compare | Palindrome number check |
 
+### varletconst — Scope & Hoisting Practice
+
+**Folder:** `chapter_12_JavascriptCodingAssignments/varletconst/`
+
+| File | Description |
+|------|-------------|
+| `test1.js` | `let` vs `var` scope demonstration — `let` inside block scope vs function scope with `var` |
+
 ### Run Commands
 
 ```bash
 # Fundamentals
 node chapter_12_JavascriptCodingAssignments/fundametals/Q1_print1to10numbers.js
 node chapter_12_JavascriptCodingAssignments/fundametals/Q10_palindromnumber.js
+
+# varletconst
+node chapter_12_JavascriptCodingAssignments/varletconst/test1.js
 ```
 
 ### Arrays — Beginner
@@ -706,6 +718,8 @@ node chapter_12_JavascriptCodingAssignments/Strings/palindromprogram.js
 | `110_let.js` | **NEW!** Let and TDZ — Temporal Dead Zone with block scope |
 | `111_IQ.js` | **NEW!** IQ: `var` function scope vs `let` block scope — redeclaration behavior |
 | `112_var_let_const.js` | **NEW!** `var` vs `let` vs `const` — scope, redeclaration, hoisting comparison |
+| `113_TDZ.js` | **NEW!** Temporal Dead Zone — accessing `let a` before declaration throws `ReferenceError` |
+| `114_IQ.js` | **NEW!** IQ: Function hoisting — calling `greet()` before declaration with `function` declaration works |
 
 ### Function Types Overview
 
@@ -777,6 +791,8 @@ node chapter_13_functionsconcept/109_function_Hoisting.js
 node chapter_13_functionsconcept/110_let.js
 node chapter_13_functionsconcept/111_IQ.js
 node chapter_13_functionsconcept/112_var_let_const.js
+node chapter_13_functionsconcept/113_TDZ.js
+node chapter_13_functionsconcept/114_IQ.js
 ```
 
 ---
@@ -1109,7 +1125,6 @@ node chapter_20_asyncandAwait/169_BetterWay.js
 | `index.html` | HTML page with embedded `<script src="index.js">` — browser debugging setup |
 | `index.js` | JavaScript execution context demo — `var x = 1`, function `a()` (x=10), function `b()` (x=100), logs `x` at global scope |
 | `index1.js` | Hoisting demo — `var x = 7`, function `getName()` logs "Namaste JavaScript", calling `getName()` before and after declaration |
-| `test.js` | Simple variable assignment test — `let count = count + 1` demonstrating `NaN` behavior with uninitialized self-reference |
 
 ### Key Concepts
 
@@ -1141,6 +1156,28 @@ Global Execution Context created
 node chapter_21_Debug/index.js
 node chapter_21_Debug/index1.js
 ```
+
+---
+
+## Chapter 22: 100 Day Challenge of JavaScript
+
+**Folder:** `Chapter_22_100DayChallengeofJavaScript/`
+
+| File | Description |
+|------|-------------|
+| `Day1.md` | **Day 1 — JavaScript Execution Context & Call Stack** — Everything in JS happens inside Execution Context (Memory Component + Code Component), synchronous single-threaded language, step-by-step walkthrough of `square()` function execution, Call Stack LIFO mechanics |
+| `Day2.md` | **Day 2 — Scope, Scope Chain, Lexical Environment & Variable Shadowing** — Scope decides where variables are accessible, lexical environment defined, scope chain mechanism, variable shadowing explained with real-world Playwright/QA automation examples |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Execution Context** | Container with Memory (Variable Environment) and Code (Thread of Execution) components |
+| **Call Stack** | LIFO stack managing execution contexts — GEC at bottom, function ECs pushed/popped |
+| **Scope** | Determines where variables/functions are accessible in the program |
+| **Scope Chain** | Chain of lexical environments — inner scope can access outer scope variables |
+| **Lexical Environment** | Local memory + lexical environment of parent (scope chain) |
+| **Variable Shadowing** | Inner scope variable with same name as outer scope — outer variable is shadowed |
 
 ---
 
@@ -1270,9 +1307,11 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 19. Async and Await ────────► async/await syntax, promise chaining vs async/await, real-world login flow, deep dive notes
         │
-20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action, NaN self-reference test
+20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action
         │
-21. Playwright 3x ──────────► (Coming next!)
+21. 100 Day Challenge ──────► Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing
+        │
+22. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
