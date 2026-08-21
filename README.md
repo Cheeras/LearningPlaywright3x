@@ -29,7 +29,8 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow, deep dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing, JavaScript data types |
+| 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1167,6 +1168,7 @@ node chapter_21_Debug/index1.js
 |------|-------------|
 | `Day1.md` | **Day 1 — JavaScript Execution Context & Call Stack** — Everything in JS happens inside Execution Context (Memory Component + Code Component), synchronous single-threaded language, step-by-step walkthrough of `square()` function execution, Call Stack LIFO mechanics |
 | `Day2.md` | **Day 2 — Scope, Scope Chain, Lexical Environment & Variable Shadowing** — Scope decides where variables are accessible, lexical environment defined, scope chain mechanism, variable shadowing explained with real-world Playwright/QA automation examples |
+| `Day3.md` | **Day 3 — JavaScript Data Types in Automation Testing** — Primitive and non-primitive types, `typeof`, strict comparisons, type conversion, the `typeof null` behavior, and array detection with `Array.isArray()` |
 
 ### Key Concepts
 
@@ -1178,6 +1180,30 @@ node chapter_21_Debug/index1.js
 | **Scope Chain** | Chain of lexical environments — inner scope can access outer scope variables |
 | **Lexical Environment** | Local memory + lexical environment of parent (scope chain) |
 | **Variable Shadowing** | Inner scope variable with same name as outer scope — outer variable is shadowed |
+| **Data Types** | Primitive values (`string`, `number`, `boolean`, `undefined`, `null`, `bigint`, `symbol`) and non-primitive values such as objects, arrays, and functions |
+| **Type Checking** | Use `typeof` for general type checks and `Array.isArray()` to distinguish arrays from other objects |
+| **Strict Comparison** | `===` compares both value and type, helping automation tests catch mismatched UI, API, environment, and test-data formats |
+
+---
+
+## Chapter 23: Testing Academy JavaScript Programming Test
+
+**Folder:** `chapter_23_testingAcademyJSProgramingTest/`
+
+| File | Description |
+|------|-------------|
+| `01_NumberEvenorOdd.js` | Validate a number and determine whether it is even or odd |
+| `02_LargestOf3numbers.js` | Find the largest of three numbers, including equal-value cases |
+| `03_StringReverse.js` | Reverse a string with a backward `for` loop and `charAt()` |
+| `04_StringPalindrom.js` | Reverse a string and check whether it is a palindrome |
+| `05_FactorialOfGivenNumber.js` | Calculate a factorial with a `while` loop |
+| `06_FibonaciSerias.js` | Generate a Fibonacci series of the requested length in an array |
+| `07_PrimeNumberChecker.js` | Check whether a number is prime by testing possible factors |
+| `08_CountVowelsInString.js` | Count vowels in a string with a case-insensitive regular expression |
+| `09_FindLargestNumberInArray.js` | Find the largest value in an array through iteration |
+| `10_RemoveDuplicateArray.js` | Build a unique array by filtering repeated values with `includes()` |
+
+These exercises reinforce conditionals, loops, functions, strings, arrays, regular expressions, and input validation through common JavaScript programming-test questions.
 
 ---
 
@@ -1309,9 +1335,11 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action
         │
-21. 100 Day Challenge ──────► Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing
+21. 100 Day Challenge ──────► Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing, Data Types
         │
-22. Playwright 3x ──────────► (Coming next!)
+22. Programming Test ───────► Even/odd, strings, factorial, Fibonacci, primes, vowels, arrays
+        │
+23. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
