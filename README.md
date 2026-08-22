@@ -1182,7 +1182,7 @@ node chapter_21_Debug/index1.js
 
 ## Chapter 22: 100 Day Challenge of JavaScript
 
-**Folder:** `chapter_22_100DayChallengeofJavaScript/`
+**Folder:** `Chapter_22_100DayChallengeofJavaScript/`
 
 | File | Description |
 |------|-------------|
