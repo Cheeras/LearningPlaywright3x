@@ -27,7 +27,7 @@
 | 17 | [Multi-Dimensions Array](#chapter-17-multi-dimensions-array) | 2D arrays, nested iteration, matrix operations, pattern building (right-angle, left-angle, pyramid) |
 | 18 | [Callback Concept](#chapter-18-callback-concept) | Sync/Async callbacks, forEach, callback hell, pyramid of DOM, real-world E2E flow |
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
-| 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, better way — promise chaining vs async/await comparison, real-world login flow, deep dive notes |
+| 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
 | 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing, JavaScript data types |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
@@ -1074,7 +1074,15 @@ node chapter_19_promiseconcept/167_Promise_IQ2.js
 |------|-------------|
 | `168_async.js` | **async/await basics** — `getToken` → `getUser` chaining, `.then()` vs `async/await` comparison |
 | `169_BetterWay.js` | **Better Way — async/await** — E2E login flow with `async function` + `await`, cleaner than promise chaining |
+| `170_Asyncawait.js` | Demonstrates that async functions return Promises and how `await` reads resolved values |
+| `171_RealExampleAsync.js` | Playwright test using `await` for page navigation, title assertion, and an asynchronous helper |
+| `171_trycatch.js` | Error handling with `try`, `catch`, and `finally` around a rejected Promise |
+| `172_seqExecution.js` | Sequential API-call simulation for dependent operations, including elapsed-time measurement |
+| `173_ParallelExecution.js` | Parallel API-call simulation with `Promise.all()` and elapsed-time comparison |
+| `174_APIFlacky.js` | Real-world QA retry pattern for flaky asynchronous API operations |
+| `175_IQ.js` | Async/await interview examples, including event-loop output ordering across an `await` boundary |
 | `AsynAndAwaitNotes.txt` | **Deep Dive Notes** — comprehensive async/await guide: why async programming, `async` always returns Promise, `await` waits for Promise, async required before await, real-time browser automation example, Playwright test pattern, common mistakes (missing async, missing await), function declaration styles, summary table |
+| `recapofAsyncandawait.txt` | Placeholder for a concise async/await recap |
 
 ### Key Concepts
 
@@ -1083,6 +1091,9 @@ node chapter_19_promiseconcept/167_Promise_IQ2.js
 | **`async` function** | Declares a function that returns a Promise | `async function run() { ... }` |
 | **`await`** | Pauses execution until the Promise settles | `let token = await getToken()` |
 | **Promise Chaining vs async/await** | async/await is cleaner, more readable, avoids `.then()` nesting | See `169_BetterWay.js` |
+| **Error Handling** | Use `try/catch/finally` with awaited operations | See `171_trycatch.js` |
+| **Sequential vs Parallel** | Await dependent tasks in order; use `Promise.all()` for independent tasks | See `172_seqExecution.js` and `173_ParallelExecution.js` |
+| **Retry Pattern** | Retry transient failures up to a defined limit | See `174_APIFlacky.js` |
 
 ### Promise Chaining vs async/await
 
@@ -1113,6 +1124,15 @@ runLoginFlow();
 ```bash
 node chapter_20_asyncandAwait/168_async.js
 node chapter_20_asyncandAwait/169_BetterWay.js
+node chapter_20_asyncandAwait/170_Asyncawait.js
+node chapter_20_asyncandAwait/171_trycatch.js
+node chapter_20_asyncandAwait/172_seqExecution.js
+node chapter_20_asyncandAwait/173_ParallelExecution.js
+node chapter_20_asyncandAwait/174_APIFlacky.js
+node chapter_20_asyncandAwait/175_IQ.js
+
+# Requires @playwright/test and must be run with the Playwright test runner
+npx playwright test chapter_20_asyncandAwait/171_RealExampleAsync.js
 ```
 
 ---

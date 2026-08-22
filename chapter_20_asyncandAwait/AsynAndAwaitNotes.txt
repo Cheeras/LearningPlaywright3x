@@ -474,4 +474,5 @@ means:
 
 Complete this browser operation first, then move to the next test step.
 
-That is why async/await is extremely important when you start working with Playwright, API calls, Node.js, database operations, and modern JavaScript automation frameworks.
+That is why async/await is extremely important when you start working with Playwright, API calls, Node.js, database operations,
+and modern JavaScript automation frameworks.
