@@ -29,8 +29,9 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution Context, Call Stack, Scope, Scope Chain, Variable Shadowing, data types, and JavaScript operators for automation testing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, and arrays for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
+| 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named exports/imports, default exports, and combining import styles |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1190,6 +1191,9 @@ node chapter_21_Debug/index1.js
 | `Day2.md` | **Day 2 — Scope, Scope Chain, Lexical Environment & Variable Shadowing** — Scope decides where variables are accessible, lexical environment defined, scope chain mechanism, variable shadowing explained with real-world Playwright/QA automation examples |
 | `Day3.md` | **Day 3 — JavaScript Data Types in Automation Testing** — Primitive and non-primitive types, `typeof`, strict comparisons, type conversion, the `typeof null` behavior, and array detection with `Array.isArray()` |
 | `Day4.md` | **Day 4 — JavaScript Operators in Automation Testing** — Arithmetic, assignment, comparison, logical, and ternary operators with QA examples for API validation, credentials, browser support, and page performance |
+| `Day5.md` | **Day 5 — Conditional Statements** — Decision-making with `if`, `if...else`, `else if`, nested conditions, `switch`, and automation-focused validation examples |
+| `Day6.md` | **Day 6 — JavaScript Loops** — `for`, `while`, `do...while`, `for...of`, `for...in`, `break`, `continue`, nested loops, retries, and Playwright link validation |
+| `Day7.md` | **Day 7 — JavaScript Arrays** — Array creation and indexing, common mutation methods, loops, arrays of objects, data-driven Playwright tests, and practical validation examples |
 
 ### Key Concepts
 
@@ -1207,6 +1211,9 @@ node chapter_21_Debug/index1.js
 | **Arithmetic & Assignment Operators** | Calculate test statistics and update values with operators such as `+`, `%`, `+=`, and `-=` |
 | **Comparison & Logical Operators** | Validate actual versus expected results and combine conditions safely with `===`, `!==`, `&&`, `||`, and `!` |
 | **Ternary Operator** | Express a simple conditional result using `condition ? valueIfTrue : valueIfFalse` |
+| **Conditional Statements** | Make test-flow decisions with `if`, `else if`, `else`, nested conditions, and `switch` |
+| **Loops** | Repeat test actions and process data with `for`, `while`, `do...while`, `for...of`, and `for...in` |
+| **Arrays** | Store and process related test data, including arrays of objects for data-driven automation |
 
 ---
 
@@ -1228,6 +1235,36 @@ node chapter_21_Debug/index1.js
 | `10_RemoveDuplicateArray.js` | Build a unique array by filtering repeated values with `includes()` |
 
 These exercises reinforce conditionals, loops, functions, strings, arrays, regular expressions, and input validation through common JavaScript programming-test questions.
+
+---
+
+## Chapter 24: Import and Export
+
+**Folder:** `chapter_24_ImportandExport/`
+
+| File | Description |
+|------|-------------|
+| `176_importandexport.js` | Defines and exposes `printNumber()` and `sum()` as named exports |
+| `177_testImportExport.js` | Imports the named and default exports, then invokes each imported function |
+| `178_defaultimport.js` | Exports `squareIt()` as the default export and `Subraction()` as a named export |
+
+### Key Concepts
+
+| Concept | Example |
+|---------|---------|
+| **Named export** | `export function sum() { ... }` |
+| **Named import** | `import { printNumber, sum } from './176_importandexport.js'` |
+| **Default export** | `export default function squareIt() { ... }` |
+| **Default import** | `import squareIt from './178_defaultimport.js'` |
+| **Combined import** | `import squareIt, { Subraction } from './178_defaultimport.js'` |
+
+### Run Command
+
+```bash
+node chapter_24_ImportandExport/177_testImportExport.js
+```
+
+The entry file demonstrates how ES modules split reusable functions across files and consume both named and default exports.
 
 ---
 
@@ -1359,11 +1396,13 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 20. Debug ──────────────────► JavaScript execution context, call stack, hoisting in action
         │
-21. 100 Day Challenge ──────► Execution Context, Call Stack, Scope, Scope Chain, Lexical Environment, Variable Shadowing, Data Types, Operators
+21. 100 Day Challenge ──────► Execution Context, Scope, Data Types, Operators, Conditionals, Loops, Arrays
         │
 22. Programming Test ───────► Even/odd, strings, factorial, Fibonacci, primes, vowels, arrays
         │
-23. Playwright 3x ──────────► (Coming next!)
+23. Import and Export ──────► ES modules, named exports/imports, default exports
+        │
+24. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
