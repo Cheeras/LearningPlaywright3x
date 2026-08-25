@@ -31,7 +31,8 @@
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
 | 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, and arrays for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
-| 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named exports/imports, default exports, and combining import styles |
+| 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
+| 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Class blueprints, private attributes, methods, object creation, and references |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1247,6 +1248,12 @@ These exercises reinforce conditionals, loops, functions, strings, arrays, regul
 | `176_importandexport.js` | Defines and exposes `printNumber()` and `sum()` as named exports |
 | `177_testImportExport.js` | Imports the named and default exports, then invokes each imported function |
 | `178_defaultimport.js` | Exports `squareIt()` as the default export and `Subraction()` as a named export |
+| `179_testutils.js` | Exports a base URL and a utility that converts a string to uppercase |
+| `180_testimport.js` | Imports and uses the base URL and uppercase-formatting utility |
+| `181_utils.js` | Exports an API base URL and reusable test-name formatting functions |
+| `182_testu.js` | Resolves duplicate export names with import aliases and formats a test name |
+| `183.js` | Imports the default logger and records a startup event |
+| `logs/logger.js` | Provides a default logger and a named, formatted logging function |
 
 ### Key Concepts
 
@@ -1257,14 +1264,46 @@ These exercises reinforce conditionals, loops, functions, strings, arrays, regul
 | **Default export** | `export default function squareIt() { ... }` |
 | **Default import** | `import squareIt from './178_defaultimport.js'` |
 | **Combined import** | `import squareIt, { Subraction } from './178_defaultimport.js'` |
+| **Import alias** | `import { BASE_URL as bul_util } from './181_utils.js'` |
+| **Nested module** | `import log from './logs/logger.js'` |
 
 ### Run Command
 
 ```bash
 node chapter_24_ImportandExport/177_testImportExport.js
+node chapter_24_ImportandExport/180_testimport.js
+node chapter_24_ImportandExport/182_testu.js
+node chapter_24_ImportandExport/183.js
 ```
 
-The entry file demonstrates how ES modules split reusable functions across files and consume both named and default exports.
+These examples demonstrate how ES modules split reusable functions and constants across files, consume named and default exports, alias conflicting import names, and organize a logger in a nested module.
+
+---
+
+## Chapter 25: Classes, Objects, and OOP
+
+**Folder:** `chapter_25_class_Object_Oops/`
+
+| File | Description |
+|------|-------------|
+| `184.js` | Defines a `Person` class with private attributes and behavior methods, then creates two object instances |
+| `classandObject.md` | Introduces classes as blueprints and objects as real-world instances with attributes and behaviors |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Class** | A blueprint that defines the attributes and behaviors shared by its objects |
+| **Object** | A concrete instance created from a class with the `new` keyword |
+| **Private field** | A class attribute prefixed with `#`, such as `#name` or `#age` |
+| **Method** | A behavior declared inside a class, such as `eat()` or `sleep()` |
+| **Object reference** | A variable such as `pramod` or `amit` that points to a `Person` instance |
+
+### Run Command
+
+```bash
+node chapter_25_class_Object_Oops/184.js
+```
 
 ---
 
@@ -1400,9 +1439,11 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 22. Programming Test ───────► Even/odd, strings, factorial, Fibonacci, primes, vowels, arrays
         │
-23. Import and Export ──────► ES modules, named exports/imports, default exports
+23. Import and Export ──────► ES modules, named/default exports, aliases, reusable utilities, logging
         │
-24. Playwright 3x ──────────► (Coming next!)
+24. Classes, Objects & OOP ─► Class blueprints, private fields, methods, instances, references
+        │
+25. Playwright 3x ──────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
