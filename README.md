@@ -29,7 +29,7 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, and arrays for automation testing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, and strings for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Class blueprints, private attributes, methods, object creation, and references |
@@ -1195,6 +1195,7 @@ node chapter_21_Debug/index1.js
 | `Day5.md` | **Day 5 — Conditional Statements** — Decision-making with `if`, `if...else`, `else if`, nested conditions, `switch`, and automation-focused validation examples |
 | `Day6.md` | **Day 6 — JavaScript Loops** — `for`, `while`, `do...while`, `for...of`, `for...in`, `break`, `continue`, nested loops, retries, and Playwright link validation |
 | `Day7.md` | **Day 7 — JavaScript Arrays** — Array creation and indexing, common mutation methods, loops, arrays of objects, data-driven Playwright tests, and practical validation examples |
+| `Day8.md` | **Day 8 — JavaScript Strings** — String creation, template literals, indexing, immutability, case conversion, trimming, searching, slicing, splitting, replacing, combining, and Playwright text validation |
 
 ### Key Concepts
 
@@ -1215,6 +1216,7 @@ node chapter_21_Debug/index1.js
 | **Conditional Statements** | Make test-flow decisions with `if`, `else if`, `else`, nested conditions, and `switch` |
 | **Loops** | Repeat test actions and process data with `for`, `while`, `do...while`, `for...of`, and `for...in` |
 | **Arrays** | Store and process related test data, including arrays of objects for data-driven automation |
+| **Strings** | Clean, compare, search, extract, split, replace, and validate text used in UI, URL, API, and test-data checks |
 
 ---
 
