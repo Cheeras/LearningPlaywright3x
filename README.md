@@ -32,7 +32,7 @@
 | 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, and strings for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
-| 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Class blueprints, private attributes, methods, object creation, and references |
+| 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1196,6 +1196,7 @@ node chapter_21_Debug/index1.js
 | `Day6.md` | **Day 6 — JavaScript Loops** — `for`, `while`, `do...while`, `for...of`, `for...in`, `break`, `continue`, nested loops, retries, and Playwright link validation |
 | `Day7.md` | **Day 7 — JavaScript Arrays** — Array creation and indexing, common mutation methods, loops, arrays of objects, data-driven Playwright tests, and practical validation examples |
 | `Day8.md` | **Day 8 — JavaScript Strings** — String creation, template literals, indexing, immutability, case conversion, trimming, searching, slicing, splitting, replacing, combining, and Playwright text validation |
+| `Day9.md` | **Day 9 — JavaScript Objects** — Key-value pairs, property access, nested objects, arrays of objects, methods, `this`, object iteration, reference behavior, and automation test data |
 
 ### Key Concepts
 
@@ -1217,6 +1218,7 @@ node chapter_21_Debug/index1.js
 | **Loops** | Repeat test actions and process data with `for`, `while`, `do...while`, `for...of`, and `for...in` |
 | **Arrays** | Store and process related test data, including arrays of objects for data-driven automation |
 | **Strings** | Clean, compare, search, extract, split, replace, and validate text used in UI, URL, API, and test-data checks |
+| **Objects** | Model users, configurations, API responses, and test data with properties, methods, nested structures, and arrays of objects |
 
 ---
 
@@ -1288,8 +1290,18 @@ These examples demonstrate how ES modules split reusable functions and constants
 
 | File | Description |
 |------|-------------|
-| `184.js` | Defines a `Person` class with private attributes and behavior methods, then creates two object instances |
 | `classandObject.md` | Introduces classes as blueprints and objects as real-world instances with attributes and behaviors |
+| `01_Class_Object/184.js` | Defines a `Person` class with private fields and creates object instances |
+| `01_Class_Object/185_car.js` | Demonstrates parameterized and default constructors with car and bike objects |
+| `01_Class_Object/186.js` | Shows constructor execution when a new object is created |
+| `01_Class_Object/187_Real_Scenario.js` | Models automation test cases with constructor properties and a display method |
+| `02_Public_Private/188_Real.js` | Models browser instances with public fields and lifecycle methods |
+| `02_Public_Private/189_IQ.js` | Demonstrates reusable API clients with instance-specific base URLs |
+| `02_Public_Private/190_Private_Public.js` | Compares public fields with a private `#apiKey` field |
+| `03_Static/191_static.js` | Tracks total and passed tests with shared static fields |
+| `03_Static/192_IQ.js` | Adds a static summary method and contrasts it with instance methods |
+| `03_Static/193.js` | Demonstrates a static college name shared by student instances |
+| `03_Static/194.js` | Compares an outer variable with an instance field initialized by a constructor |
 
 ### Key Concepts
 
@@ -1300,11 +1312,18 @@ These examples demonstrate how ES modules split reusable functions and constants
 | **Private field** | A class attribute prefixed with `#`, such as `#name` or `#age` |
 | **Method** | A behavior declared inside a class, such as `eat()` or `sleep()` |
 | **Object reference** | A variable such as `pramod` or `amit` that points to a `Person` instance |
+| **Constructor** | Initialization logic that runs automatically when an object is created with `new` |
+| **Public field** | Instance data accessible through an object reference, such as `browser.name` |
+| **Static member** | Data or behavior owned by the class and shared across all instances |
 
-### Run Command
+### Run Commands
 
 ```bash
-node chapter_25_class_Object_Oops/184.js
+node chapter_25_class_Object_Oops/01_Class_Object/184.js
+node chapter_25_class_Object_Oops/01_Class_Object/187_Real_Scenario.js
+node chapter_25_class_Object_Oops/02_Public_Private/190_Private_Public.js
+node chapter_25_class_Object_Oops/03_Static/191_static.js
+node chapter_25_class_Object_Oops/03_Static/192_IQ.js
 ```
 
 ---
