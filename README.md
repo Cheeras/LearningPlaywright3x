@@ -1186,7 +1186,7 @@ node chapter_21_Debug/index1.js
 
 ## Chapter 22: 100 Day Challenge of JavaScript
 
-**Folder:** `Chapter_22_100DayChallengeofJavaScript/`
+**Folder:** `chapter_22_100DayChallengeofJavaScript/`
 
 | File | Description |
 |------|-------------|
@@ -1199,6 +1199,7 @@ node chapter_21_Debug/index1.js
 | `Day7.md` | **Day 7 — JavaScript Arrays** — Array creation and indexing, common mutation methods, loops, arrays of objects, data-driven Playwright tests, and practical validation examples |
 | `Day8.md` | **Day 8 — JavaScript Strings** — String creation, template literals, indexing, immutability, case conversion, trimming, searching, slicing, splitting, replacing, combining, and Playwright text validation |
 | `Day9.md` | **Day 9 — JavaScript Objects** — Key-value pairs, property access, nested objects, arrays of objects, methods, `this`, object iteration, reference behavior, and automation test data |
+| `Day10.md` | **Day 10 — JavaScript Classes & Constructors** — How classes act as blueprints for reusable test objects, how `new` creates instances, and how constructors initialize object state for scalable automation frameworks |
 
 ### Key Concepts
 
@@ -1221,6 +1222,7 @@ node chapter_21_Debug/index1.js
 | **Arrays** | Store and process related test data, including arrays of objects for data-driven automation |
 | **Strings** | Clean, compare, search, extract, split, replace, and validate text used in UI, URL, API, and test-data checks |
 | **Objects** | Model users, configurations, API responses, and test data with properties, methods, nested structures, and arrays of objects |
+| **Classes & Constructors** | Create reusable blueprints for test entities, initialize shared state with `constructor()`, and scale automation logic across multiple objects |
 
 ---
 
