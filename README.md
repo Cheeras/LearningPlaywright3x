@@ -33,6 +33,8 @@
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
+| 26 | [Encapsulation](#chapter-26-encapsulation) | Private fields, getter/setter methods, validation, and object state protection |
+| 27 | [Inheritance](#chapter-27-inheritance) | Base classes, derived classes, single inheritance, and page object model patterns |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1325,6 +1327,71 @@ node chapter_25_class_Object_Oops/02_Public_Private/190_Private_Public.js
 node chapter_25_class_Object_Oops/03_Static/191_static.js
 node chapter_25_class_Object_Oops/03_Static/192_IQ.js
 ```
+
+---
+
+## Chapter 26: Encapsulation
+
+**Folder:** `chapter_26_Oops_Encapsulation/`
+
+| File | Description |
+|------|-------------|
+| `195_enpsu.js` | Demonstrates private fields using `#child1` and `#child2` with controlled access through getters and setters |
+| `196_Car.js` | Encapsulates the car engine behind a private field and exposes safe update methods |
+| `197_Ecap_Bank.js` | Simulates bank balance protection with a private `#balance` and conditional setter validation |
+| `198_IQ.js` | Practice on encapsulation concepts and access control patterns |
+| `199_IQ.js` | Additional interview-style encapsulation questions |
+| `200_IQ.js` | More encapsulation examples for real-world state protection |
+| `201_IQ.js` | Review questions covering private state and controlled mutation |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Encapsulation** | Hiding internal state and exposing only the necessary API |
+| **Private field** | A property prefixed with `#` that is not directly accessible outside the class |
+| **Getter** | Reads the private value through a safe method such as `getBalance()` |
+| **Setter** | Updates the private value through validation logic such as `setBalance()` |
+| **State protection** | Prevents direct mutation and enforces business rules |
+
+### Run Commands
+
+```bash
+node chapter_26_Oops_Encapsulation/195_enpsu.js
+node chapter_26_Oops_Encapsulation/196_Car.js
+node chapter_26_Oops_Encapsulation/197_Ecap_Bank.js
+```
+
+These examples show how encapsulation keeps class internals safe while still allowing controlled access and reconciliation with real-world business rules.
+
+---
+
+## Chapter 27: Inheritance
+
+**Folder:** `chapter_27_Oops_Inheritance/`
+
+| File | Description |
+|------|-------------|
+| `202_singleInheritance.js` | Single inheritance example using a `BasePage` parent class and a `LoginPage` child class |
+| `203.js` | Another basic inheritance demonstration with shared page behavior and derived page classes |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Inheritance** | A child class reuses the behavior of a parent class |
+| **Base class** | Parent class containing shared methods such as `open()` and `close()` |
+| **Derived class** | Child class that inherits from the parent without rewriting the common logic |
+| **Page Object Model** | Reusable page behavior for login, dashboard, and other UI flows |
+
+### Run Commands
+
+```bash
+node chapter_27_Oops_Inheritance/202_singleInheritance.js
+node chapter_27_Oops_Inheritance/203.js
+```
+
+Inheritance helps reduce duplication by keeping shared behavior in one class and reusing it across different specialized pages or objects.
 
 ---
 
