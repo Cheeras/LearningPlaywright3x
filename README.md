@@ -29,12 +29,12 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, and strings for automation testing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, strings, objects, classes, **inheritance, polymorphism, encapsulation** for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
 | 26 | [Encapsulation](#chapter-26-encapsulation) | Private fields, getter/setter methods, validation, and object state protection |
-| 27 | [Inheritance](#chapter-27-inheritance) | Base classes, derived classes, single inheritance, and page object model patterns |
+| 27 | [Inheritance](#chapter-27-inheritance) | Single, multilevel, hierarchical inheritance, method overriding, runtime polymorphism, mixin pattern |
 | 28 | [Polymorphism](#chapter-28-polymorphism) | Method overriding, runtime polymorphism, BaseTest vs APITest |
 | 29 | [OOPS Interview](#chapter-29-oops-interview) | TypeScript utility functions, type annotations, HTTP status code filtering |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
@@ -1202,6 +1202,9 @@ node chapter_21_Debug/index1.js
 | `Day8.md` | **Day 8 — JavaScript Strings** — String creation, template literals, indexing, immutability, case conversion, trimming, searching, slicing, splitting, replacing, combining, and Playwright text validation |
 | `Day9.md` | **Day 9 — JavaScript Objects** — Key-value pairs, property access, nested objects, arrays of objects, methods, `this`, object iteration, reference behavior, and automation test data |
 | `Day10.md` | **Day 10 — JavaScript Classes & Constructors** — How classes act as blueprints for reusable test objects, how `new` creates instances, and how constructors initialize object state for scalable automation frameworks |
+| `Day11.md` | **Day 11 — Inheritance** — Avoiding code duplication in test automation frameworks by sharing common setup/teardown methods through inheritance |
+| `Day12.md` | **Day 12 — Polymorphism** — Same method name producing different behaviors depending on the object type (e.g., `browser.launch()` for Chrome/Firefox/Edge) |
+| `Day13.md` | **Day 13 — Encapsulation** — Protecting data from accidental modification to build reliable automation frameworks |
 
 ### Key Concepts
 
@@ -1225,6 +1228,9 @@ node chapter_21_Debug/index1.js
 | **Strings** | Clean, compare, search, extract, split, replace, and validate text used in UI, URL, API, and test-data checks |
 | **Objects** | Model users, configurations, API responses, and test data with properties, methods, nested structures, and arrays of objects |
 | **Classes & Constructors** | Create reusable blueprints for test entities, initialize shared state with `constructor()`, and scale automation logic across multiple objects |
+| **Inheritance** | Share common setup/teardown methods across test classes to avoid code duplication in automation frameworks |
+| **Polymorphism** | Same method name produces different behavior depending on the object type — `browser.launch()` for Chrome/Firefox/Edge |
+| **Encapsulation** | Protect test data and configuration from accidental modification by using private fields and controlled access |
 
 ---
 
@@ -1374,25 +1380,47 @@ These examples show how encapsulation keeps class internals safe while still all
 
 **Folder:** `chapter_27_Oops_Inheritance/`
 
-| File | Description |
-|------|-------------|
-| `202_singleInheritance.js` | Single inheritance example using a `BasePage` parent class and a `LoginPage` child class |
-| `203.js` | Another basic inheritance demonstration with shared page behavior and derived page classes |
+| Subfolder / File | Description |
+|------------------|-------------|
+| `01_Single_Inheritance/202_single.js` | Single inheritance — `LoginPage` extends `BasePage`, inheriting `open()` and `close()` methods |
+| `01_Single_Inheritance/203_Animal.js` | Single inheritance — `Dog` extends `Animal` with `super()` constructor chaining and `super.method()` |
+| `01_Single_Inheritance/204_IQ.js` | Method overriding — `APITest.setUp()` overrides `BaseTest.setUp()` to change browser-open behavior |
+| `01_Single_Inheritance/205_IQ2.js` | Constructor chaining with `super()` — calling parent `setUp()` / `tearDown()` in a test framework |
+| `01_Single_Inheritance/206_IQ3.js` | Runtime polymorphism — `UnitTest`, `APITest`, `E2ETest` override `execute()`, called via an array |
+| `01_Single_Inheritance/207_IQ4.js` | Polymorphic page verification — `LoginPage`, `DashboardPage`, `CartPage` each override `verify()` |
+| `01_Single_Inheritance/208_IQ.js` | Polymorphic reporting — `HTMLReport`, `JSONReport`, `TextReport` each implement different `generate()` |
+| `02_Multiple_Inheritace/209_m.js` | Multiple inheritance — documents that JS does **not** support extending multiple classes |
+| `02_Multiple_Inheritace/210_m1.js` | Mixin pattern — achieving multiple inheritance via composable class-returning functions |
+| `03_MultiLevel_Inheritance/211.js` | Multilevel inheritance — `BasePage → AuthPage → AdminPage` chain |
+| `04_Hierachial_Inheritance/212.js` | Hierarchical inheritance — `Son1`, `Son2`, `Son3` all extend a single `Father` class |
 
 ### Key Concepts
 
 | Concept | Description |
 |---------|-------------|
-| **Inheritance** | A child class reuses the behavior of a parent class |
-| **Base class** | Parent class containing shared methods such as `open()` and `close()` |
-| **Derived class** | Child class that inherits from the parent without rewriting the common logic |
-| **Page Object Model** | Reusable page behavior for login, dashboard, and other UI flows |
+| **Single Inheritance** | A child class extends one parent class, reusing its methods and properties |
+| **Method Overriding** | Child redefines a parent method with the same name to change behavior |
+| **`super()`** | Calls the parent class constructor from the child class constructor |
+| **`super.method()`** | Invokes the parent's version of an overridden method |
+| **Runtime Polymorphism** | The same method call behaves differently based on the actual object type |
+| **Multiple Inheritance (not supported)** | JS classes can only extend one parent — use **Mixins** as an alternative |
+| **Multilevel Inheritance** | A chain: `GrandParent → Parent → Child` |
+| **Hierarchical Inheritance** | Multiple children extend the same single parent |
 
 ### Run Commands
 
 ```bash
-node chapter_27_Oops_Inheritance/202_singleInheritance.js
-node chapter_27_Oops_Inheritance/203.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/202_single.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/203_Animal.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/204_IQ.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/205_IQ2.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/206_IQ3.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/207_IQ4.js
+node chapter_27_Oops_Inheritance/01_Single_Inheritance/208_IQ.js
+node chapter_27_Oops_Inheritance/02_Multiple_Inheritace/209_m.js
+node chapter_27_Oops_Inheritance/02_Multiple_Inheritace/210_m1.js
+node chapter_27_Oops_Inheritance/03_MultiLevel_Inheritance/211.js
+node chapter_27_Oops_Inheritance/04_Hierachial_Inheritance/212.js
 ```
 
 Inheritance helps reduce duplication by keeping shared behavior in one class and reusing it across different specialized pages or objects.
@@ -1585,11 +1613,15 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 24. Classes, Objects & OOP ─► Class blueprints, private fields, methods, instances, references
         │
-25. Polymorphism ──────────► Method overriding, runtime dispatch
+25. Encapsulation ──────────► Private fields, getters/setters, state protection
         │
-26. OOPS Interview ────────► TypeScript utilities, typed array filtering
+26. Inheritance ────────────► Single, multilevel, hierarchical, method overriding, mixins
         │
-27. Playwright 3x ─────────► (Coming next!)
+27. Polymorphism ──────────► Method overriding, runtime dispatch
+        │
+28. OOPS Interview ────────► TypeScript utilities, typed array filtering
+        │
+29. Playwright 3x ─────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
