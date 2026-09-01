@@ -35,6 +35,8 @@
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
 | 26 | [Encapsulation](#chapter-26-encapsulation) | Private fields, getter/setter methods, validation, and object state protection |
 | 27 | [Inheritance](#chapter-27-inheritance) | Base classes, derived classes, single inheritance, and page object model patterns |
+| 28 | [Polymorphism](#chapter-28-polymorphism) | Method overriding, runtime polymorphism, BaseTest vs APITest |
+| 29 | [OOPS Interview](#chapter-29-oops-interview) | TypeScript utility functions, type annotations, HTTP status code filtering |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1397,6 +1399,56 @@ Inheritance helps reduce duplication by keeping shared behavior in one class and
 
 ---
 
+## Chapter 28: Polymorphism
+
+**Folder:** `chapter_28_Polymorphism/`
+
+| File | Description |
+|------|-------------|
+| `213.js` | Method overriding — `BaseTest.setUp()` overridden by `APITest.setUp()`, runtime polymorphism in action |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Method Overriding** | Child class redefines a method from the parent class with the same name |
+| **Runtime Polymorphism** | The method called depends on the object type at runtime |
+| **BaseTest → APITest** | `btest.setUp()` calls BaseTest version, `test.setUp()` calls APITest version |
+
+### Run Commands
+
+```bash
+node chapter_28_Polymorphism/213.js
+```
+
+---
+
+## Chapter 29: OOPS Interview
+
+**Folder:** `chapter_29_OOPS_Interview/`
+
+| File | Description |
+|------|-------------|
+| `214.ts` | TypeScript utility functions — `buildEndPoint()`, `isSuccessCode()`, `logTestStep()` with type annotations |
+| `215_IQ.ts` | TypeScript array filtering — `fetchFailedCodes()` filters HTTP status codes ≥ 400 |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Type Annotations** | `: string`, `: number`, `: number[]`, `: void`, `: boolean` — TypeScript static typing |
+| **Array Filtering** | `filter()` with typed callback — `function(code: number): boolean` |
+| **Utility Functions** | Reusable typed helpers for API endpoint building and status code validation |
+
+### Run Commands
+
+```bash
+npx tsx chapter_29_OOPS_Interview/214.ts
+npx tsx chapter_29_OOPS_Interview/215_IQ.ts
+```
+
+---
+
 ## IQ Notes 🧠
 
 **Folder:** `IQ_Notes/`
@@ -1533,7 +1585,11 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 24. Classes, Objects & OOP ─► Class blueprints, private fields, methods, instances, references
         │
-25. Playwright 3x ──────────► (Coming next!)
+25. Polymorphism ──────────► Method overriding, runtime dispatch
+        │
+26. OOPS Interview ────────► TypeScript utilities, typed array filtering
+        │
+27. Playwright 3x ─────────► (Coming next!)
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
