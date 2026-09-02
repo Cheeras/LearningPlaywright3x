@@ -29,14 +29,15 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, strings, objects, classes, **inheritance, polymorphism, encapsulation** for automation testing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, strings, objects, classes, **inheritance, polymorphism, encapsulation, abstraction** for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
 | 26 | [Encapsulation](#chapter-26-encapsulation) | Private fields, getter/setter methods, validation, and object state protection |
 | 27 | [Inheritance](#chapter-27-inheritance) | Single, multilevel, hierarchical inheritance, method overriding, runtime polymorphism, mixin pattern |
 | 28 | [Polymorphism](#chapter-28-polymorphism) | Method overriding, runtime polymorphism, BaseTest vs APITest |
-| 29 | [OOPS Interview](#chapter-29-oops-interview) | TypeScript utility functions, type annotations, HTTP status code filtering |
+| 29 | [OOPS Interview](#chapter-29-oops-interview) | TypeScript utility functions, type annotations, HTTP status code filtering, Bug/Environment/User/Counter classes, prototypal inheritance |
+| 30 | [TypeScript](#chapter-30-typescript) | TypeScript setup, tsconfig, ts-node/tsx configuration |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1205,6 +1206,7 @@ node chapter_21_Debug/index1.js
 | `Day11.md` | **Day 11 — Inheritance** — Avoiding code duplication in test automation frameworks by sharing common setup/teardown methods through inheritance |
 | `Day12.md` | **Day 12 — Polymorphism** — Same method name producing different behaviors depending on the object type (e.g., `browser.launch()` for Chrome/Firefox/Edge) |
 | `Day13.md` | **Day 13 — Encapsulation** — Protecting data from accidental modification to build reliable automation frameworks |
+| `Day14.md` | **Day 14 — Abstraction** — Hiding unnecessary implementation details, 15 real-time QA automation examples (Login POM, API Client, Screenshot Utility, Browser Factory, Wait Helper, etc.) |
 
 ### Key Concepts
 
@@ -1231,6 +1233,7 @@ node chapter_21_Debug/index1.js
 | **Inheritance** | Share common setup/teardown methods across test classes to avoid code duplication in automation frameworks |
 | **Polymorphism** | Same method name produces different behavior depending on the object type — `browser.launch()` for Chrome/Firefox/Edge |
 | **Encapsulation** | Protect test data and configuration from accidental modification by using private fields and controlled access |
+| **Abstraction** | Hide complex implementation details behind simple interfaces — Login POM, API Client, Screenshot Utility, Browser Factory, Wait Helper, etc. |
 
 ---
 
@@ -1459,6 +1462,11 @@ node chapter_28_Polymorphism/213.js
 |------|-------------|
 | `214.ts` | TypeScript utility functions — `buildEndPoint()`, `isSuccessCode()`, `logTestStep()` with type annotations |
 | `215_IQ.ts` | TypeScript array filtering — `fetchFailedCodes()` filters HTTP status codes ≥ 400 |
+| `216_IQ.js` | `Bug` class — constructor with `title`, `severity`, `description` and `display()` method |
+| `217_IQ.js` | `Environment` class — default parameter values (`name = "staging"`, `port = 3000`) and `getURL()` method |
+| `218_IQ.js` | `User` class — `name`, `email`, `role` properties and `greet()` method |
+| `219_IQ.js` | `Counter` class — method chaining with `increment()` and `display()` returning `this` |
+| `220_IQ.js` | Prototypal inheritance with `super` — `A → B → C` chain returning `"C>B>A"` |
 
 ### Key Concepts
 
@@ -1467,17 +1475,48 @@ node chapter_28_Polymorphism/213.js
 | **Type Annotations** | `: string`, `: number`, `: number[]`, `: void`, `: boolean` — TypeScript static typing |
 | **Array Filtering** | `filter()` with typed callback — `function(code: number): boolean` |
 | **Utility Functions** | Reusable typed helpers for API endpoint building and status code validation |
+| **Default Parameters** | Constructor defaults — `name = "staging"`, `port = 3000` |
+| **Method Chaining** | Returning `this` from methods to enable `.increment().increment().display()` |
+| **Prototypal Inheritance** | `super` keyword to call parent class methods in inheritance chain |
 
 ### Run Commands
 
 ```bash
 npx tsx chapter_29_OOPS_Interview/214.ts
 npx tsx chapter_29_OOPS_Interview/215_IQ.ts
+node chapter_29_OOPS_Interview/216_IQ.js
+node chapter_29_OOPS_Interview/217_IQ.js
+node chapter_29_OOPS_Interview/218_IQ.js
+node chapter_29_OOPS_Interview/219_IQ.js
+node chapter_29_OOPS_Interview/220_IQ.js
 ```
 
 ---
 
-## IQ Notes 🧠
+## Chapter 30: TypeScript
+
+**Folder:** `chapter_30_Typescript/`
+
+| File | Description |
+|------|-------------|
+| `221_ts.ts` | Placeholder for future TypeScript content |
+
+### Project TypeScript Setup
+
+| File | Description |
+|------|-------------|
+| `tsconfig.json` | TypeScript config — `commonjs` modules, `es2020` target, strict mode enabled |
+| `package.json` | `tsx` and `ts-node` as dev dependencies, `npm run ts` script for running `.ts` files |
+
+### Run Commands
+
+```bash
+# Using tsx (recommended)
+npm run ts chapter_30_Typescript/221_ts.ts
+
+# Or directly
+npx tsx chapter_30_Typescript/221_ts.ts
+```
 
 **Folder:** `IQ_Notes/`
 
