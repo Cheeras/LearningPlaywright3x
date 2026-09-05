@@ -38,6 +38,8 @@
 | 28 | [Polymorphism](#chapter-28-polymorphism) | Method overriding, runtime polymorphism, BaseTest vs APITest |
 | 29 | [OOPS Interview](#chapter-29-oops-interview) | TypeScript utility functions, type annotations, HTTP status code filtering, Bug/Environment/User/Counter classes, prototypal inheritance |
 | 30 | [TypeScript](#chapter-30-typescript) | TypeScript setup, tsconfig, ts-node/tsx configuration |
+| 31 | [TypeScript OOPs — Abstraction & Interfaces](#chapter-31-typescript-oops--abstraction--interfaces) | Interfaces, readonly, API response, methods, callable hooks, real config, class implements interface, index signature |
+| 32 | [TS Enum](#chapter-32-ts-enum) | Enum basics, severity levels, environments, real-world Playwright browser enum |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1529,6 +1531,85 @@ npm run ts chapter_30_Typescript/221_ts.ts
 npx tsx chapter_30_Typescript/221_ts.ts
 ```
 
+---
+
+## Chapter 31: TypeScript OOPs — Abstraction & Interfaces
+
+**Folder:** `chapter_31_Opps_TS_Abstraction/`
+
+### Interface Examples
+
+| File | Description |
+|------|-------------|
+| `Interface/233_Interface.ts` | Interface basics — user object contract with `name`, `age`, `email` |
+| `Interface/234_readonly_interface.ts` | `readonly` modifier — `point` interface with immutable `x` and `y` |
+| `Interface/235_readonly_pageObject.ts` | Readonly in Page Object pattern — `LoginPage`, `DashboardPage`, `FreeTilePage` extending `BasePage` |
+| `Interface/236_API_Response.ts` | Interface for API testing — `APIResponse` with `statuscode`, `body`, optional `headers`, `responseTime` |
+| `Interface/237_Methods_In.ts` | Interface with methods — `Calculator` with `add()`/`subtract()` and `India` with `standUpNationalAnthem()` |
+| `238_Interface_Hook.ts` | Callable interface (function type) — `TestHook` used for `beforeEachHook` and `afterEachHook` |
+| `239_REAL_Config.ts` | Real-world test config — `TestConfig` with browser, headless, baseURL, optional timeout/retries, local vs CI configs |
+| `240_calss_interface.ts` | Class implementing interface — `TestCase` implements `Executable` with `run()` and `getStatus()` |
+| `241_Interface_Misc.ts` | Index signature — `StringDictionary` with `[key: string]: string` |
+| `242.ts` | Class basics — `Car` with parameterized constructor |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Interface** | Defines a contract for the shape of an object — specifies properties, methods, and their types without implementation |
+| **`readonly`** | Marks properties as immutable — can only be assigned during initialization |
+| **Optional properties** | Marked with `?` — like `headers?` and `timeout?` — property may be omitted |
+| **Callable interface** | Interface defining a function signature — `(testName: string): void` |
+| **Class implementing interface** | `class TestCase implements Executable` — class must provide all interface members |
+| **Index signature** | `[key: string]: string` — defines dynamic string keys with string values |
+
+### Run Commands
+
+```bash
+npx tsx chapter_31_Opps_TS_Abstraction/Interface/233_Interface.ts
+npx tsx chapter_31_Opps_TS_Abstraction/Interface/234_readonly_interface.ts
+npx tsx chapter_31_Opps_TS_Abstraction/Interface/235_readonly_pageObject.ts
+npx tsx chapter_31_Opps_TS_Abstraction/Interface/236_API_Response.ts
+npx tsx chapter_31_Opps_TS_Abstraction/Interface/237_Methods_In.ts
+npx tsx chapter_31_Opps_TS_Abstraction/238_Interface_Hook.ts
+npx tsx chapter_31_Opps_TS_Abstraction/239_REAL_Config.ts
+npx tsx chapter_31_Opps_TS_Abstraction/240_calss_interface.ts
+npx tsx chapter_31_Opps_TS_Abstraction/241_Interface_Misc.ts
+npx tsx chapter_31_Opps_TS_Abstraction/242.ts
+```
+
+---
+
+## Chapter 32: TS Enum
+
+**Folder:** `chapter_32_TS_ENUM/`
+
+| File | Description |
+|------|-------------|
+| `243_ENUM.ts` | Enum basics — `TestStatus` with PASS, FAIL, SKIP, PENDING, BLOCKED |
+| `244_ENUM.ts` | String enum — `SeverityLevels` with LOW, MEDIUM, HIGH, CRITICAL, BLOCKING |
+| `245_REAL_Enum.ts` | Real-world enum — `Environment` mapping to API URLs (Dev, Staging, QA, Prod) |
+| `246_REAL_Browser_PW.ts` | Playwright-style browser enum — `Browser` (Chrome, Firefox, Safari, Edge) with `launchBrowser()` using `switch` |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **String Enum** | Enum with string values — provides meaningful names for fixed sets of options |
+| **Real-world Usage** | Enums for test status, severity levels, environment URLs, browser names |
+| **Switch with Enum** | `switch(browser)` with `case Browser.Chrome` — type-safe, clean branching |
+
+### Run Commands
+
+```bash
+npx tsx chapter_32_TS_ENUM/243_ENUM.ts
+npx tsx chapter_32_TS_ENUM/244_ENUM.ts
+npx tsx chapter_32_TS_ENUM/245_REAL_Enum.ts
+npx tsx chapter_32_TS_ENUM/246_REAL_Browser_PW.ts
+````
+
+---
+
 **Folder:** `IQ_Notes/`
 
 | File | Description |
@@ -1671,7 +1752,11 @@ node chapter_17_Multi_Dimensions_Arrary/145_Pyramidpattern.js
         │
 28. OOPS Interview ────────► TypeScript utilities, typed array filtering
         │
-29. Playwright 3x ─────────► (Coming next!)
+29. TypeScript ──────────────► Setup, tsconfig, type annotations, never type
+        │
+30. TS Interfaces ──────────► Interface contracts, readonly, API response, methods, hooks, real config, class implements interface
+        │
+31. TS Enum ────────────────► Enum types, severity, environments, Playwright browser enum
         │
 🗺️  RoadMap ───────────────► Playwright learning roadmap PDF
 ```
