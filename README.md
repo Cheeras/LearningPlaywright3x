@@ -1499,7 +1499,18 @@ node chapter_29_OOPS_Interview/220_IQ.js
 
 | File | Description |
 |------|-------------|
-| `221_ts.ts` | Placeholder for future TypeScript content |
+| `221_ts.ts` | TypeScript with `"use strict"`, `let` declaration, typed function `add1(a: number, b: number)` |
+| `222_ts.ts` | Typed function `add2(a: number, b: number)` with `let` and console output |
+| `223.ts` | Basic TypeScript function `sayHello(message: string): void` |
+| `224.ts` | Primitive data types — `string`, `number`, `boolean`, `null`, `undefined`, arrays, `any`, `unknown` |
+| `225.ts` | `unknown` type with type narrowing — safe assignment to `string` |
+| `226.ts` | Function annotation — `greet(name: string): string` |
+| `227.ts` | Arrow function annotation — `greet2` and `multiply` with typed parameters |
+| `228.ts` | Object annotation — typed object `{ name: string; age: number; isAdmin: boolean }` |
+| `229.ts` | Function annotation — `sayHello(name: string): string` |
+| `230.ts` | Function annotation — `invite(name: string): string` |
+| `231.ts` | Arrow function annotation — `sayHello` with typed parameter and return |
+| `232.ts` | `never` type — `infiniteLoop()` and `throwError(message: string): never` |
 
 ### Project TypeScript Setup
 
