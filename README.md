@@ -42,6 +42,7 @@
 | 32 | [TS Enum](#chapter-32-ts-enum) | Enum basics, severity levels, environments, real-world Playwright browser enum |
 | 33 | [TypeScript Generics](#chapter-33-typescript-generics) | Generic functions, generic classes, typed API response handling |
 | 34 | [TypeScript Private / Public / Protected & Readonly](#chapter-34-typescript-private--public--protected--readonly) | Access modifiers, Page Object Model pattern, readonly properties |
+| 35 | [TypeScript Abstract Class](#chapter-35-typescript-abstract-class) | Abstract classes, abstract methods, concrete methods, UITest/APITest implementation |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1666,6 +1667,31 @@ npx tsx chapter_33_Typescript_Generics/250_API_Response.ts
 npx tsx chapter_34_Typescript_Private_Public_Protected/251_PPP.ts
 npx tsx chapter_34_Typescript_Private_Public_Protected/252_PageObjectModel.ts
 npx tsx chapter_34_Typescript_Private_Public_Protected/253_Readonly.ts
+```
+
+---
+
+## Chapter 35: TypeScript Abstract Class
+
+**Folder:** `chapter_35_abstract_class/`
+
+| File | Description |
+|------|-------------|
+| `254_Abstract.ts` | Abstract class `BaseTest` — abstract methods (`setup`, `execute`, `teardown`, `loan`) + concrete method (`loan1`), implemented by `UITest` class |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Abstract Class** | A class that cannot be instantiated directly — used as a base template for other classes |
+| **Abstract Method** | Declared without implementation — subclasses must provide the body |
+| **Concrete Method** | Regular method with implementation inside an abstract class (e.g., `loan1()`) |
+| **Subclass Implementation** | `UITest extends BaseTest` — must implement all abstract methods |
+
+### Run Commands
+
+```bash
+npx tsx chapter_35_abstract_class/254_Abstract.ts
 ```
 
 ---
