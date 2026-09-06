@@ -40,6 +40,8 @@
 | 30 | [TypeScript](#chapter-30-typescript) | TypeScript setup, tsconfig, ts-node/tsx configuration |
 | 31 | [TypeScript OOPs — Abstraction & Interfaces](#chapter-31-typescript-oops--abstraction--interfaces) | Interfaces, readonly, API response, methods, callable hooks, real config, class implements interface, index signature |
 | 32 | [TS Enum](#chapter-32-ts-enum) | Enum basics, severity levels, environments, real-world Playwright browser enum |
+| 33 | [TypeScript Generics](#chapter-33-typescript-generics) | Generic functions, generic classes, typed API response handling |
+| 34 | [TypeScript Private / Public / Protected & Readonly](#chapter-34-typescript-private--public--protected--readonly) | Access modifiers, Page Object Model pattern, readonly properties |
 | 🧠 | [IQ Notes](#iq-notes) | Interview questions, keywords, shortcuts, increment/decrement, switch case, source code vs bytecode, **complete arrays master guide**, **functions notes**, **hoisting guide (var/let/const)**, **object master class**, **overall master notes**, **JavaScript execution context & call stack notes**, **async/await deep dive notes** |
 | 🗺️ | [RoadMap](#roadmap) | Playwright learning roadmap PDF |
 
@@ -1607,6 +1609,64 @@ npx tsx chapter_32_TS_ENUM/244_ENUM.ts
 npx tsx chapter_32_TS_ENUM/245_REAL_Enum.ts
 npx tsx chapter_32_TS_ENUM/246_REAL_Browser_PW.ts
 ````
+
+---
+
+## Chapter 33: TypeScript Generics
+
+**Folder:** `chapter_33_Typescript_Generics/`
+
+| File | Description |
+|------|-------------|
+| `248_Generic.ts` | Generic function — `createArray<T>(...items)` with type-safe array creation |
+| `249_Generic_Class.ts` | Generic class — `TestDataStorage<T>` with `add()`, `getFirst()`, `getAll()`, `count()` |
+| `250_API_Response.ts` | Generic API response — `APIResponse<T>` with status, message, and typed data |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **Generic Functions** | Functions that work with any type using `<T>` — type-safe and reusable |
+| **Generic Classes** | Classes that store and manage typed data — `TestDataStorage<number>` vs `TestDataStorage<string>` |
+| **Generic Constraints** | Restricting generics to specific shapes or interfaces |
+
+### Run Commands
+
+```bash
+npx tsx chapter_33_Typescript_Generics/248_Generic.ts
+npx tsx chapter_33_Typescript_Generics/249_Generic_Class.ts
+npx tsx chapter_33_Typescript_Generics/250_API_Response.ts
+```
+
+---
+
+## Chapter 34: TypeScript Private / Public / Protected & Readonly
+
+**Folder:** `chapter_34_Typescript_Private_Public_Protected/`
+
+| File | Description |
+|------|-------------|
+| `251_PPP.ts` | Access modifiers — `public`, `private`, `protected` with `Employee` and `Manager` classes |
+| `252_PageObjectModel.ts` | POM pattern — `LoginPage` with private locators and public methods |
+| `253_Readonly.ts` | `readonly` modifier — immutable properties in classes and interfaces |
+
+### Key Concepts
+
+| Concept | Description |
+|---------|-------------|
+| **public** | Default access — accessible from anywhere |
+| **private** | Accessible only within the class — encapsulates internal state |
+| **protected** | Accessible within the class and subclasses |
+| **readonly** | Property can only be assigned once (in declaration or constructor) |
+| **POM Pattern** | Page Object Model — private locators, public action methods |
+
+### Run Commands
+
+```bash
+npx tsx chapter_34_Typescript_Private_Public_Protected/251_PPP.ts
+npx tsx chapter_34_Typescript_Private_Public_Protected/252_PageObjectModel.ts
+npx tsx chapter_34_Typescript_Private_Public_Protected/253_Readonly.ts
+```
 
 ---
 

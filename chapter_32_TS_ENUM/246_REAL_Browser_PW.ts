@@ -10,15 +10,16 @@ function launchBrowser(browser: Browser): void {
         case Browser.Chrome:
             console.log("Launching Chromium (Chrome V120)");
             break;
-        case Browser.Chrome:
-            console.log("Launching Chromium (Chrome V120)");
+        case Browser.Firefox:
+            console.log("Launching Gecko (Firefox V115)");
             break;
-        case Browser.Chrome:
-            console.log("Launching Chromium (Chrome V120)");
+        case Browser.Safari:
+            console.log("Launching Webkit (Safari V17)");
             break;
-        case Browser.Chrome:
+        case Browser.Edge:
             console.log("Launching Chromium (Chrome V120)");
             break;
         
     }
 }
+launchBrowser(Browser.Chrome);
