@@ -29,7 +29,7 @@
 | 19 | [Promise Concept](#chapter-19-promise-concept) | Promise creation, .then/.catch/.finally, Promise.all, allSettled, race, real-world API scenarios, interview questions |
 | 20 | [Async and Await](#chapter-20-async-and-await) | async/await syntax, Playwright example, error handling, sequential and parallel execution, retry patterns, interview questions, deep-dive notes |
 | 21 | [Debug](#chapter-21-debug) | JavaScript execution context, call stack, hoisting in action with browser debugging |
-| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, strings, objects, classes, **inheritance, polymorphism, encapsulation, abstraction** for automation testing |
+| 22 | [100 Day Challenge](#chapter-22-100-day-challenge-of-javascript) | Execution context, scope, data types, operators, conditionals, loops, arrays, strings, objects, classes, **inheritance, polymorphism, encapsulation, abstraction, prototypes, prototype chain, `this` keyword, `call/apply/bind`** for automation testing |
 | 23 | [Testing Academy JavaScript Programming Test](#chapter-23-testing-academy-javascript-programming-test) | Even/odd, largest of three, string reversal, palindrome, factorial, Fibonacci, prime numbers, vowels, array maximum, duplicate removal |
 | 24 | [Import and Export](#chapter-24-import-and-export) | ES modules, named/default exports, import aliases, reusable utilities, and logging modules |
 | 25 | [Classes, Objects, and OOP](#chapter-25-classes-objects-and-oop) | Classes, constructors, public/private fields, static members, methods, and automation examples |
@@ -1212,6 +1212,10 @@ node chapter_21_Debug/index1.js
 | `Day12.md` | **Day 12 — Polymorphism** — Same method name producing different behaviors depending on the object type (e.g., `browser.launch()` for Chrome/Firefox/Edge) |
 | `Day13.md` | **Day 13 — Encapsulation** — Protecting data from accidental modification to build reliable automation frameworks |
 | `Day14.md` | **Day 14 — Abstraction** — Hiding unnecessary implementation details, 15 real-time QA automation examples (Login POM, API Client, Screenshot Utility, Browser Factory, Wait Helper, etc.) |
+| `Day15.md` | **Day 15 — JavaScript Prototypes & Prototype Chain** — Classes look like Java but under the hood it's all prototypes; prototype chain mechanics with QA automation examples |
+| `Day16.md` | **Day 16 — Prototype Chain & Prototypal Inheritance** — How JavaScript finds methods not directly on an object; method sharing, property lookup, and scalable automation framework design |
+| `Day17.md` | **Day 17 — The `this` Keyword** — Understanding `this` in classes, objects, arrow functions, and Playwright/WebdriverIO framework patterns |
+| `Day18.md` | **Day 18 — `call()`, `apply()` and `bind()`** — Explicitly controlling `this`; difference between execute-now vs create-and-execute-later patterns |
 
 ### Key Concepts
 
