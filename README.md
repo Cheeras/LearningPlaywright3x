@@ -1216,6 +1216,7 @@ node chapter_21_Debug/index1.js
 | `Day16.md` | **Day 16 — Prototype Chain & Prototypal Inheritance** — How JavaScript finds methods not directly on an object; method sharing, property lookup, and scalable automation framework design |
 | `Day17.md` | **Day 17 — The `this` Keyword** — Understanding `this` in classes, objects, arrow functions, and Playwright/WebdriverIO framework patterns |
 | `Day18.md` | **Day 18 — `call()`, `apply()` and `bind()`** — Explicitly controlling `this`; difference between execute-now vs create-and-execute-later patterns |
+| `Day19.md` | **Day 19 — Promises and Async/Await** — Why async matters in Playwright, Promise states (pending/fulfilled/rejected), async/await syntax, common Playwright mistakes (missing `await`), real-time API response handling, parallel execution with `Promise.all()` |
 
 ### Key Concepts
 
@@ -1487,6 +1488,9 @@ node chapter_28_Polymorphism/213.js
 | **Default Parameters** | Constructor defaults — `name = "staging"`, `port = 3000` |
 | **Method Chaining** | Returning `this` from methods to enable `.increment().increment().display()` |
 | **Prototypal Inheritance** | `super` keyword to call parent class methods in inheritance chain |
+| **Promises** | Object representing eventual completion/failure of async operations — pending, fulfilled, rejected states |
+| **Async/Await** | Cleaner syntax for working with Promises — `async` functions always return a Promise, `await` pauses execution until the Promise settles |
+| **Parallel Execution** | Using `Promise.all()` to run independent async operations concurrently |
 
 ### Run Commands
 
